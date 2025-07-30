@@ -1,63 +1,29 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
-
-const featuredProjects = [
-  {
-    title: "Enterprise Banking App",
-    description:
-      "React Native application for Bank Rakyat Indonesia (BRI) serving 100K+ users with core banking features.",
-    image: "/placeholder.svg?height=200&width=300",
-    technologies: ["React Native", "Node.js", "PostgreSQL", "Apigee"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "HRIS Management System",
-    description: "Complete redesign of HR system with modern React stack, improving user navigation by 40%.",
-    image: "/placeholder.svg?height=200&width=300",
-    technologies: ["React.js", "Next.js", "TypeScript", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-]
-
-const otherProjects = [
-  {
-    title: "E-Learning Platform",
-    description: "Front-end overhaul of e-course platform boosting performance by 25%.",
-    technologies: ["React.js", "Next.js", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "TUV Nord System",
-    description: "Unified front-end architecture accelerating development by 60%.",
-    technologies: ["React.js", "TypeScript", "AWS"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Finance Dashboard",
-    description: "Internal finance dashboard with GraphQL and atomic design.",
-    technologies: ["React.js", "GraphQL", "Node.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Multi-Dealer App",
-    description: "Mobile app managing 26+ dealer locations with real-time sync.",
-    technologies: ["React Native", "Firebase", "Node.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-]
+import { getProjects } from "@/lib/data"
 
 export function ProjectsSection() {
+  const projects = getProjects()
+  const [visibleOtherCount, setVisibleOtherCount] = useState(6)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const loadMoreProjects = async () => {
+    setIsLoading(true)
+    // Simulate loading delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setVisibleOtherCount((prev) => Math.min(prev + 6, projects.other.length))
+    setIsLoading(false)
+  }
+
+  const visibleOtherProjects = projects.other.slice(0, visibleOtherCount)
+  const hasMoreProjects = visibleOtherCount < projects.other.length
+
   return (
     <section id="projects" className="section-padding scroll-offset">
       <div className="container">
@@ -70,7 +36,7 @@ export function ProjectsSection() {
 
         {/* Featured Projects */}
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {featuredProjects.map((project) => (
+          {projects.featured.map((project) => (
             <Card key={project.title} className="modern-card overflow-hidden">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
@@ -110,7 +76,7 @@ export function ProjectsSection() {
         <div>
           <h3 className="text-mobile-h3 mb-4 sm:mb-6 text-center">Other Projects</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {otherProjects.map((project) => (
+            {visibleOtherProjects.map((project) => (
               <Card key={project.title} className="modern-card">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base sm:text-lg">{project.title}</CardTitle>
@@ -123,6 +89,11 @@ export function ProjectsSection() {
                         {tech}
                       </Badge>
                     ))}
+                    {project.technologies.length > 3 && (
+                      <Badge variant="outline" className="border-primary/20 text-primary text-xs">
+                        +{project.technologies.length - 3}
+                      </Badge>
+                    )}
                   </div>
                   <div className="flex gap-2">
                     <Button
@@ -146,6 +117,28 @@ export function ProjectsSection() {
               </Card>
             ))}
           </div>
+
+          {/* Load More Button */}
+          {hasMoreProjects && (
+            <div className="text-center mt-8 sm:mt-12">
+              <Button
+                onClick={loadMoreProjects}
+                disabled={isLoading}
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-mobile-small px-6 sm:px-8 bg-transparent"
+                size="lg"
+              >
+                {isLoading ? (
+                  <>
+                    <div className="animate-spin mr-2 h-3 w-3 sm:h-4 sm:w-4 border-2 border-current border-t-transparent rounded-full"></div>
+                    Loading...
+                  </>
+                ) : (
+                  `Load More Projects (${projects.other.length - visibleOtherCount} remaining)`
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>

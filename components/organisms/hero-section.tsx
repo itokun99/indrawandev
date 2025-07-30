@@ -15,6 +15,11 @@ export function HeroSection() {
     }
   }
 
+  const handleDownloadCV = () => {
+    // Open the resume link in a new tab since it's a Google Drive link
+    window.open(personalInfo.resume, "_blank", "noopener,noreferrer")
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-background to-muted/20 pt-16">
       <div className="container text-center">
@@ -77,12 +82,10 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-mobile-body bg-transparent"
-              asChild
+              onClick={handleDownloadCV}
             >
-              <a href={personalInfo.resume} download>
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </a>
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
             </Button>
           </div>
 

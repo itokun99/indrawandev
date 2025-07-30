@@ -132,6 +132,96 @@
         "liveUrl": "#",
         "githubUrl": "#",
         "featured": false
+      },
+      {
+        "id": 7,
+        "title": "PermataBank Mobile Banking",
+        "description": "Enhanced mobile banking features with improved UX and security implementations.",
+        "technologies": ["React Native", "Redux", "Node.js", "JWT"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 8,
+        "title": "Telkomsel Customer Portal",
+        "description": "Customer self-service portal with real-time data synchronization and billing integration.",
+        "technologies": ["React.js", "Next.js", "PostgreSQL", "Redis"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 9,
+        "title": "Astra Honda Dealer Management",
+        "description": "Comprehensive dealer management system for inventory, sales, and customer relationship management.",
+        "technologies": ["React Native", "Node.js", "MongoDB", "Socket.io"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 10,
+        "title": "Educational Content Management",
+        "description": "CMS for educational institutions with course management and student progress tracking.",
+        "technologies": ["React.js", "Express.js", "MySQL", "AWS S3"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 11,
+        "title": "Real Estate Platform",
+        "description": "Property listing and management platform with advanced search and filtering capabilities.",
+        "technologies": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 12,
+        "title": "Inventory Management System",
+        "description": "Enterprise inventory tracking system with barcode scanning and automated reporting.",
+        "technologies": ["React Native", "Go", "PostgreSQL", "Docker"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 13,
+        "title": "Healthcare Appointment System",
+        "description": "Patient appointment scheduling system with doctor availability and medical records integration.",
+        "technologies": ["React.js", "Node.js", "MongoDB", "WebSocket"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 14,
+        "title": "E-Commerce Analytics Dashboard",
+        "description": "Real-time analytics dashboard for e-commerce platforms with sales insights and customer behavior tracking.",
+        "technologies": ["React.js", "D3.js", "Node.js", "InfluxDB"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 15,
+        "title": "Task Management Mobile App",
+        "description": "Cross-platform task management app with team collaboration and project tracking features.",
+        "technologies": ["React Native", "Firebase", "Redux Toolkit", "Expo"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 16,
+        "title": "API Gateway Service",
+        "description": "Microservices API gateway with rate limiting, authentication, and request routing.",
+        "technologies": ["Go", "Redis", "Docker", "Kubernetes"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
       }
     ]
   },

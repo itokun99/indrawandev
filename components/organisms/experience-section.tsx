@@ -1,12 +1,27 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Building, Calendar, MapPin } from "lucide-react"
 import { getWorkExperience } from "@/lib/data"
 
 export function ExperienceSection() {
-  const experiences = getWorkExperience()
+  const allExperiences = getWorkExperience()
+  const [visibleCount, setVisibleCount] = useState(4)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const loadMoreExperiences = async () => {
+    setIsLoading(true)
+    // Simulate loading delay
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    setVisibleCount((prev) => Math.min(prev + 3, allExperiences.length))
+    setIsLoading(false)
+  }
+
+  const visibleExperiences = allExperiences.slice(0, visibleCount)
+  const hasMoreExperiences = visibleCount < allExperiences.length
 
   return (
     <section id="experience" className="section-padding bg-muted/30 scroll-offset">
@@ -14,7 +29,7 @@ export function ExperienceSection() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-mobile-h2 mb-3 sm:mb-4 gradient-text">Work Experience</h2>
           <p className="text-mobile-body text-muted-foreground max-w-2xl mx-auto">
-            My professional journey and key achievements
+            My professional journey and key achievements over {allExperiences.length} positions
           </p>
         </div>
 
@@ -23,7 +38,7 @@ export function ExperienceSection() {
             {/* Timeline line */}
             <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform sm:-translate-x-0.5"></div>
 
-            {experiences.map((experience, index) => (
+            {visibleExperiences.map((experience, index) => (
               <div key={experience.id} className="relative mb-8 sm:mb-12 last:mb-0">
                 {/* Timeline dot */}
                 <div className="absolute left-2 sm:left-1/2 w-4 h-4 bg-primary rounded-full transform sm:-translate-x-2 z-10 mt-4"></div>
@@ -65,15 +80,25 @@ export function ExperienceSection() {
                               {achievement}
                             </li>
                           ))}
+                          {experience.achievements.length > 3 && (
+                            <li className="text-xs text-muted-foreground/70 italic">
+                              +{experience.achievements.length - 3} more achievements
+                            </li>
+                          )}
                         </ul>
                       </div>
 
                       <div className="flex flex-wrap gap-1">
-                        {experience.technologies.map((tech) => (
+                        {experience.technologies.slice(0, 4).map((tech) => (
                           <Badge key={tech} variant="outline" className="border-primary/20 text-primary text-xs">
                             {tech}
                           </Badge>
                         ))}
+                        {experience.technologies.length > 4 && (
+                          <Badge variant="outline" className="border-primary/20 text-primary text-xs">
+                            +{experience.technologies.length - 4}
+                          </Badge>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -81,6 +106,28 @@ export function ExperienceSection() {
               </div>
             ))}
           </div>
+
+          {/* Load More Button */}
+          {hasMoreExperiences && (
+            <div className="text-center mt-8 sm:mt-12">
+              <Button
+                onClick={loadMoreExperiences}
+                disabled={isLoading}
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-mobile-small px-6 sm:px-8 bg-transparent"
+                size="lg"
+              >
+                {isLoading ? (
+                  <>
+                    <div className="animate-spin mr-2 h-3 w-3 sm:h-4 sm:w-4 border-2 border-current border-t-transparent rounded-full"></div>
+                    Loading...
+                  </>
+                ) : (
+                  `Load More Experience (${allExperiences.length - visibleCount} remaining)`
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
