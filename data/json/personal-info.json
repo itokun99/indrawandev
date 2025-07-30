@@ -1,0 +1,19 @@
+{
+  "name": "Indrawan Lisanto",
+  "title": "Software Engineer & Full-Stack Developer",
+  "shortBio": "Passionate about building scalable applications with React Native, Next.js, and Node.js. 6+ years of experience creating solutions for enterprise clients.",
+  "longBio": "Software engineer specializing in React Native and full-stack development. Building scalable applications that make a difference.",
+  "location": "Tangerang, Indonesia",
+  "email": "me@indrawan.dev",
+  "phone": "+62 851 5869 2077",
+  "website": "https://indrawan.dev",
+  "status": "Available for new opportunities",
+  "stats": {
+    "yearsExperience": "6+",
+    "projectsCompleted": "30+",
+    "companiesWorked": "8",
+    "usersServed": "30+"
+  },
+  "avatar": "/placeholder-user.jpg",
+  "resume": "/resume.pdf"
+}

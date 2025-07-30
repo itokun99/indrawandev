@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowDown, Download, Mail } from "lucide-react"
+import { getPersonalInfo } from "@/lib/data"
 
 export function HeroSection() {
+  const personalInfo = getPersonalInfo()
+
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId)
     if (element) {
@@ -18,39 +21,44 @@ export function HeroSection() {
         <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
           {/* Status badge */}
           <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-mobile-small">
-            Available for new opportunities
+            {personalInfo.status}
           </Badge>
 
           {/* Main heading */}
           <div className="space-y-4">
             <h1 className="text-mobile-h1 leading-tight">
-              Hi, I'm <span className="gradient-text">Indrawan Lisanto</span>
+              Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
             </h1>
-            <p className="text-mobile-h3 text-muted-foreground font-normal">Software Engineer & Full-Stack Developer</p>
+            <p className="text-mobile-h3 text-muted-foreground font-normal">{personalInfo.title}</p>
           </div>
 
           {/* Description */}
           <p className="text-mobile-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Passionate about building scalable applications with React Native, Next.js, and Node.js. 6+ years of
-            experience creating solutions for enterprise clients.
+            {personalInfo.shortBio}
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-lg mx-auto">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">6+</div>
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
+                {personalInfo.stats.yearsExperience}
+              </div>
               <div className="text-mobile-small text-muted-foreground">Years</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">50+</div>
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
+                {personalInfo.stats.projectsCompleted}
+              </div>
               <div className="text-mobile-small text-muted-foreground">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">8</div>
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
+                {personalInfo.stats.companiesWorked}
+              </div>
               <div className="text-mobile-small text-muted-foreground">Companies</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">100K+</div>
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">{personalInfo.stats.usersServed}</div>
               <div className="text-mobile-small text-muted-foreground">Users</div>
             </div>
           </div>
@@ -69,9 +77,12 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-mobile-body bg-transparent"
+              asChild
             >
-              <Download className="mr-2 h-4 w-4" />
-              Download CV
+              <a href={personalInfo.resume} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
             </Button>
           </div>
 

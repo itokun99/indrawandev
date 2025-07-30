@@ -1,0 +1,46 @@
+{
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "icon": "Github",
+      "url": "https://github.com/itokun99",
+      "username": "@itokun99"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "Linkedin",
+      "url": "https://linkedin.com/in/indrawan-lisanto",
+      "username": "indrawan-lisanto"
+    },
+    {
+      "name": "Twitter",
+      "icon": "Twitter",
+      "url": "https://twitter.com/indrawanlisanto",
+      "username": "@indrawanlisanto"
+    },
+    {
+      "name": "Facebook",
+      "icon": "Facebook",
+      "url": "https://facebook.com/indrawandev",
+      "username": "indrawandev"
+    },
+    {
+      "name": "Instagram",
+      "icon": "Instagram",
+      "url": "https://instagram.com/indrawandev",
+      "username": "@indrawandev"
+    },
+    {
+      "name": "Threads",
+      "icon": "AtSign",
+      "url": "https://threads.net/@indrawandev",
+      "username": "@indrawandev"
+    },
+    {
+      "name": "Email",
+      "icon": "Mail",
+      "url": "mailto:me@indrawan.dev",
+      "username": "me@indrawan.dev"
+    }
+  ]
+}

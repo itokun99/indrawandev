@@ -3,71 +3,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Building, Calendar, MapPin } from "lucide-react"
-
-const experiences = [
-  {
-    title: "Middle React Native Developer",
-    company: "Aleph-Labs",
-    location: "Jakarta, Indonesia",
-    period: "2019 - Present",
-    type: "Full-time",
-    description: "Leading development for enterprise clients including Astra Honda, PermataBank, and Telkomsel.",
-    achievements: [
-      "Led development for enterprise clients including Astra Honda, PermataBank, and Telkomsel",
-      "Improved application performance by 30-40% through optimization techniques",
-      "Established coding standards that increased team development efficiency by 30%",
-      "Managed cross-platform mobile applications for 26+ dealer locations",
-    ],
-    technologies: ["React Native", "Node.js", "PostgreSQL", "Firebase"],
-  },
-  {
-    title: "Senior Software Engineer",
-    company: "PT Karya Inovasi Digital",
-    location: "Tangerang, Indonesia",
-    period: "2024 - 2025",
-    type: "Freelance",
-    description: "Architected mobile & desktop applications for educational systems.",
-    achievements: [
-      "Architected mobile & desktop applications for educational systems",
-      "Improved development process efficiency by 50% through better team communication",
-      "Optimized React Native codebase resulting in 60% performance increase",
-      "Mentored junior developers and established development standards",
-    ],
-    technologies: ["React Native", "React.js", "TypeScript", "Node.js"],
-  },
-  {
-    title: "Full-Stack Software Engineer",
-    company: "PT Cahaya Sanivokasi",
-    location: "Tangerang, Indonesia",
-    period: "2024 - 2025",
-    type: "Freelance",
-    description: "Led complete redesign of HRIS frontend with modern React stack.",
-    achievements: [
-      "Led complete redesign of HRIS frontend with modern React stack",
-      "Optimized user navigation flows resulting in 40% UX improvement",
-      "Established development standards and architected microservices",
-      "Mentored engineers to foster culture of ownership and quality",
-    ],
-    technologies: ["React.js", "Next.js", "TypeScript", "PostgreSQL"],
-  },
-  {
-    title: "Full-Stack Engineer",
-    company: "PT Sharing Vision Indonesia",
-    location: "Jakarta, Indonesia",
-    period: "2021 - 2023",
-    type: "Remote",
-    description: "Developed microservices for Bank Rakyat Indonesia (BRI) BRIAPI division.",
-    achievements: [
-      "Developed microservices for Bank Rakyat Indonesia (BRI) BRIAPI division",
-      "Implemented core banking features including payment systems and authentication",
-      "Maintained API Gateway using Apigee for all BRIAPI products",
-      "Conducted comprehensive end-to-end testing for banking applications",
-    ],
-    technologies: ["Node.js", "PostgreSQL", "Apigee", "Microservices"],
-  },
-]
+import { getWorkExperience } from "@/lib/data"
 
 export function ExperienceSection() {
+  const experiences = getWorkExperience()
+
   return (
     <section id="experience" className="section-padding bg-muted/30 scroll-offset">
       <div className="container">
@@ -84,7 +24,7 @@ export function ExperienceSection() {
             <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 transform sm:-translate-x-0.5"></div>
 
             {experiences.map((experience, index) => (
-              <div key={experience.title + experience.company} className="relative mb-8 sm:mb-12 last:mb-0">
+              <div key={experience.id} className="relative mb-8 sm:mb-12 last:mb-0">
                 {/* Timeline dot */}
                 <div className="absolute left-2 sm:left-1/2 w-4 h-4 bg-primary rounded-full transform sm:-translate-x-2 z-10 mt-4"></div>
 

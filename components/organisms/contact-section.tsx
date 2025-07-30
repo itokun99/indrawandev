@@ -7,8 +7,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { SocialLinks } from "@/components/molecules/social-links"
+import { getPersonalInfo } from "@/lib/data"
 
 export function ContactSection() {
+  const personalInfo = getPersonalInfo()
+
   return (
     <section id="contact" className="section-padding scroll-offset">
       <div className="container">
@@ -37,7 +40,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-mobile-small font-medium">Email</h4>
-                  <p className="text-mobile-small text-muted-foreground">ito@byito.dev</p>
+                  <p className="text-mobile-small text-muted-foreground">{personalInfo.email}</p>
                 </div>
               </div>
 
@@ -47,7 +50,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-mobile-small font-medium">Phone</h4>
-                  <p className="text-mobile-small text-muted-foreground">+62 123 456 7890</p>
+                  <p className="text-mobile-small text-muted-foreground">{personalInfo.phone}</p>
                 </div>
               </div>
 
@@ -57,7 +60,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-mobile-small font-medium">Location</h4>
-                  <p className="text-mobile-small text-muted-foreground">Jakarta, Indonesia</p>
+                  <p className="text-mobile-small text-muted-foreground">{personalInfo.location}</p>
                 </div>
               </div>
             </div>

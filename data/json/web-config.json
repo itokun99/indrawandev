@@ -1,0 +1,263 @@
+{
+  "site": {
+    "title": "Indrawan Lisanto - Software Engineer & React Native Developer",
+    "description": "Software Engineer with over 6 years of experience, specializing in React Native to build high-performance mobile applications for enterprise clients.",
+    "keywords": "Software Engineer, React Native Developer, Frontend Specialist, TypeScript, Next.js, Go Developer",
+    "author": "Indrawan Lisanto",
+    "url": "https://indrawan.dev",
+    "logo": "/placeholder-logo.svg"
+  },
+  "navigation": [
+    {
+      "name": "Skills",
+      "href": "#skills"
+    },
+    {
+      "name": "Projects",
+      "href": "#projects"
+    },
+    {
+      "name": "Experience",
+      "href": "#experience"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "skills": {
+    "categories": [
+      {
+        "title": "Frontend",
+        "skills": [
+          { "name": "React Native", "level": 95 },
+          { "name": "React.js", "level": 90 },
+          { "name": "Next.js", "level": 85 },
+          { "name": "TypeScript", "level": 88 }
+        ]
+      },
+      {
+        "title": "Backend",
+        "skills": [
+          { "name": "Node.js", "level": 85 },
+          { "name": "Go", "level": 80 },
+          { "name": "PostgreSQL", "level": 75 },
+          { "name": "MongoDB", "level": 70 },
+          { "name": "GraphQL", "level": 65 },
+          { "name": "REST APIs", "level": 88 }
+        ]
+      },
+      {
+        "title": "Tools",
+        "skills": [
+          { "name": "Git", "level": 90 },
+          { "name": "Docker", "level": 70 },
+          { "name": "AWS", "level": 65 },
+          { "name": "Firebase", "level": 80 }
+        ]
+      }
+    ],
+    "technologies": [
+      "React Native",
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Go",
+      "PostgreSQL",
+      "MongoDB",
+      "GraphQL",
+      "Docker",
+      "AWS",
+      "Firebase",
+      "Git"
+    ]
+  },
+  "projects": {
+    "featured": [
+      {
+        "id": 1,
+        "title": "Enterprise Banking App",
+        "description": "React Native application for Bank Rakyat Indonesia (BRI) serving 100K+ users with core banking features.",
+        "image": "/placeholder.svg?height=200&width=300",
+        "technologies": ["React Native", "Node.js", "PostgreSQL", "Apigee"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "title": "HRIS Management System",
+        "description": "Complete redesign of HR system with modern React stack, improving user navigation by 40%.",
+        "image": "/placeholder.svg?height=200&width=300",
+        "technologies": ["React.js", "Next.js", "TypeScript", "PostgreSQL"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": true
+      }
+    ],
+    "other": [
+      {
+        "id": 3,
+        "title": "E-Learning Platform",
+        "description": "Front-end overhaul of e-course platform boosting performance by 25%.",
+        "technologies": ["React.js", "Next.js", "TypeScript"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 4,
+        "title": "TUV Nord System",
+        "description": "Unified front-end architecture accelerating development by 60%.",
+        "technologies": ["React.js", "TypeScript", "AWS"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 5,
+        "title": "Finance Dashboard",
+        "description": "Internal finance dashboard with GraphQL and atomic design.",
+        "technologies": ["React.js", "GraphQL", "Node.js"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      },
+      {
+        "id": 6,
+        "title": "Multi-Dealer App",
+        "description": "Mobile app managing 26+ dealer locations with real-time sync.",
+        "technologies": ["React Native", "Firebase", "Node.js"],
+        "liveUrl": "#",
+        "githubUrl": "#",
+        "featured": false
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "text": "Indrawan's expertise in React Native development was instrumental in delivering our mobile application on time. His attention to detail and ability to optimize performance resulted in a 40% improvement in our app's speed.",
+      "author": "Sarah Johnson",
+      "title": "Product Manager at PermataBank",
+      "avatar": "/placeholder.svg?height=60&width=60"
+    },
+    {
+      "id": 2,
+      "text": "Working with Indrawan was a game-changer for our development team. His leadership in establishing coding standards and mentoring junior developers increased our overall productivity by 30%.",
+      "author": "Michael Chen",
+      "title": "Engineering Director at Telkomsel",
+      "avatar": "/placeholder.svg?height=60&width=60"
+    },
+    {
+      "id": 3,
+      "text": "Indrawan's full-stack capabilities and architectural thinking helped us modernize our legacy systems. His microservices approach improved our system reliability and made maintenance much easier.",
+      "author": "Amanda Rodriguez",
+      "title": "CTO at Sharing Vision Indonesia",
+      "avatar": "/placeholder.svg?height=60&width=60"
+    }
+  ],
+  "featuredInsights": [
+    {
+      "id": 1,
+      "category": "Architecture",
+      "title": "Building Scalable React Native Apps",
+      "description": "Best practices for architecting cross-platform mobile applications that can scale with your business needs.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Smartphone",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "category": "Performance",
+      "title": "Optimizing Enterprise Applications",
+      "description": "Techniques I used to improve performance by 40% in banking and e-commerce applications.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Zap",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "category": "Leadership",
+      "title": "Leading Technical Teams",
+      "description": "Insights on mentoring developers and establishing coding standards that increase team efficiency.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Users",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "category": "Microservices",
+      "title": "Designing Microservice Architecture",
+      "description": "How I architected banking microservices for BRI that handle millions of transactions daily.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Database",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "category": "DevOps",
+      "title": "CI/CD for Mobile Applications",
+      "description": "Implementing automated deployment pipelines for React Native apps across multiple environments.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Cpu",
+      "link": "#"
+    },
+    {
+      "id": 6,
+      "category": "Code Quality",
+      "title": "Establishing Development Standards",
+      "description": "Creating coding standards and review processes that improved team productivity by 30%.",
+      "image": "/placeholder.svg?height=200&width=300",
+      "icon": "Code",
+      "link": "#"
+    }
+  ],
+  "youtubeVideos": [
+    {
+      "id": 1,
+      "title": "React Native Architecture Best Practices",
+      "description": "Deep dive into scalable React Native app architecture patterns and folder structures.",
+      "thumbnail": "/placeholder.svg?height=180&width=320",
+      "videoId": "dQw4w9WgXcQ",
+      "duration": "15:42",
+      "views": "12.5K",
+      "publishedAt": "2024-01-15",
+      "category": "Tutorial"
+    },
+    {
+      "id": 2,
+      "title": "Building Microservices with Go",
+      "description": "Complete guide to building and deploying microservices using Go and Docker.",
+      "thumbnail": "/placeholder.svg?height=180&width=320",
+      "videoId": "dQw4w9WgXcQ",
+      "duration": "22:18",
+      "views": "8.9K",
+      "publishedAt": "2024-01-08",
+      "category": "Backend"
+    },
+    {
+      "id": 3,
+      "title": "Career Journey: From Junior to Senior Developer",
+      "description": "My personal journey and lessons learned in 6+ years of software development.",
+      "thumbnail": "/placeholder.svg?height=180&width=320",
+      "videoId": "dQw4w9WgXcQ",
+      "duration": "18:35",
+      "views": "25.3K",
+      "publishedAt": "2023-12-20",
+      "category": "Career"
+    },
+    {
+      "id": 4,
+      "title": "TypeScript Tips for React Native",
+      "description": "Advanced TypeScript patterns and tricks for better React Native development.",
+      "thumbnail": "/placeholder.svg?height=180&width=320",
+      "videoId": "dQw4w9WgXcQ",
+      "duration": "12:24",
+      "views": "6.7K",
+      "publishedAt": "2023-12-10",
+      "category": "Tutorial"
+    }
+  ]
+}

@@ -1,17 +1,14 @@
 "use client"
 
+import { getNavigation } from "@/lib/data"
+
 interface NavigationProps {
   mobile?: boolean
   onItemClick?: () => void
 }
 
 export function Navigation({ mobile = false, onItemClick }: NavigationProps) {
-  const navItems = [
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
-  ]
+  const navItems = getNavigation()
 
   const handleClick = (href: string) => {
     const element = document.querySelector(href)

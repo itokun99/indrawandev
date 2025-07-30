@@ -1,7 +1,10 @@
 import { Logo } from "@/components/atoms/logo"
 import { SocialLinks } from "@/components/molecules/social-links"
+import { getPersonalInfo } from "@/lib/data"
 
 export function Footer() {
+  const personalInfo = getPersonalInfo()
+
   return (
     <footer className="bg-muted/30 border-t border-border">
       <div className="container section-padding">
@@ -9,10 +12,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Logo />
-            <p className="text-mobile-small text-muted-foreground max-w-sm">
-              Software engineer specializing in React Native and full-stack development. Building scalable applications
-              that make a difference.
-            </p>
+            <p className="text-mobile-small text-muted-foreground max-w-sm">{personalInfo.longBio}</p>
             <SocialLinks />
           </div>
 
@@ -51,15 +51,15 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-mobile-small font-semibold">Get In Touch</h3>
             <div className="space-y-2 text-mobile-small text-muted-foreground">
-              <p>Jakarta, Indonesia</p>
-              <p>ito@byito.dev</p>
-              <p>+62 123 456 7890</p>
+              <p>{personalInfo.location}</p>
+              <p>{personalInfo.email}</p>
+              <p>{personalInfo.phone}</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-border mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-mobile-small text-muted-foreground">
-          <p>&copy; 2024 Indrawan Lisanto. All rights reserved.</p>
+          <p>&copy; 2024 {personalInfo.name}. All rights reserved.</p>
         </div>
       </div>
     </footer>
