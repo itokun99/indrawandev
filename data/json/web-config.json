@@ -217,47 +217,47 @@
   "youtubeVideos": [
     {
       "id": 1,
-      "title": "React Native Architecture Best Practices",
-      "description": "Deep dive into scalable React Native app architecture patterns and folder structures.",
-      "thumbnail": "/placeholder.svg?height=180&width=320",
-      "videoId": "dQw4w9WgXcQ",
-      "duration": "15:42",
-      "views": "12.5K",
-      "publishedAt": "2024-01-15",
+      "title": "Build a REST API with Hono and Bun",
+      "description": "Learn how to build a high-performance REST API using Hono framework and Bun runtime. This comprehensive tutorial covers setup, routing, middleware, and deployment strategies for modern web applications.",
+      "thumbnail": "https://img.youtube.com/vi/xzVnqg9O6DM/hqdefault.jpg",
+      "videoId": "xzVnqg9O6DM",
+      "duration": "28:45",
+      "views": "15.2K",
+      "publishedAt": "2024-01-20",
       "category": "Tutorial"
     },
     {
       "id": 2,
-      "title": "Building Microservices with Go",
-      "description": "Complete guide to building and deploying microservices using Go and Docker.",
-      "thumbnail": "/placeholder.svg?height=180&width=320",
-      "videoId": "dQw4w9WgXcQ",
+      "title": "React Developer Roadmap 2025",
+      "description": "Complete roadmap for becoming a React developer in 2025. Covers essential skills, tools, frameworks, and career progression tips based on industry trends and real-world experience.",
+      "thumbnail": "https://img.youtube.com/vi/rNbjFgPNhAw/hqdefault.jpg",
+      "videoId": "rNbjFgPNhAw",
       "duration": "22:18",
-      "views": "8.9K",
-      "publishedAt": "2024-01-08",
-      "category": "Backend"
-    },
-    {
-      "id": 3,
-      "title": "Career Journey: From Junior to Senior Developer",
-      "description": "My personal journey and lessons learned in 6+ years of software development.",
-      "thumbnail": "/placeholder.svg?height=180&width=320",
-      "videoId": "dQw4w9WgXcQ",
-      "duration": "18:35",
-      "views": "25.3K",
-      "publishedAt": "2023-12-20",
+      "views": "32.8K",
+      "publishedAt": "2024-01-15",
       "category": "Career"
     },
     {
+      "id": 3,
+      "title": "Exploring ATAC: TUI Postman Replacement (Live Coding & Relaxing)",
+      "description": "Join me for a relaxing live coding session as we explore ATAC, a terminal-based API testing tool that could replace Postman. Perfect background coding content with real-time problem solving.",
+      "thumbnail": "https://img.youtube.com/vi/HmugOX_lQxU/hqdefault.jpg",
+      "videoId": "HmugOX_lQxU",
+      "duration": "45:12",
+      "views": "8.9K",
+      "publishedAt": "2024-01-10",
+      "category": "Live Coding"
+    },
+    {
       "id": 4,
-      "title": "TypeScript Tips for React Native",
-      "description": "Advanced TypeScript patterns and tricks for better React Native development.",
-      "thumbnail": "/placeholder.svg?height=180&width=320",
-      "videoId": "dQw4w9WgXcQ",
-      "duration": "12:24",
-      "views": "6.7K",
-      "publishedAt": "2023-12-10",
-      "category": "Tutorial"
+      "title": "Daily Life as Software Engineer",
+      "description": "A glimpse into the daily routine of a software engineer - from morning standup meetings to debugging sessions, code reviews, and continuous learning. Real behind-the-scenes content.",
+      "thumbnail": "https://img.youtube.com/vi/ugcQ6jB80Dg/maxresdefault.jpg",
+      "videoId": "mb1APcYNJXw",
+      "duration": "0:58",
+      "views": "45.1K",
+      "publishedAt": "2024-01-08",
+      "category": "Short"
     }
   ]
 }

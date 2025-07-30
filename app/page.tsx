@@ -8,6 +8,7 @@ import { ExperienceSection } from "@/components/organisms/experience-section"
 import { TestimonialsSection } from "@/components/organisms/testimonials-section"
 import { ContactSection } from "@/components/organisms/contact-section"
 import { Footer } from "@/components/organisms/footer"
+import { BackToTop } from "@/components/atoms/back-to-top"
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   )
 }
