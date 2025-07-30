@@ -1,6 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { ArrowDown, Download, Mail } from "lucide-react"
 
 export function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -11,73 +13,77 @@ export function HeroSection() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden tech-grid pt-20">
-      {/* ASCII Art Background */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <pre className="ascii-art text-primary absolute top-24 left-10">
-          {`    ╔══════════════════════════════════════╗
-    ║  > INITIALIZING PORTFOLIO_V2.0.1     ║
-    ║  > LOADING DEVELOPER_PROFILE...      ║
-    ║  > STATUS: READY_FOR_COLLABORATION   ║
-    ╚══════════════════════════════════════╝`}
-        </pre>
-      </div>
+    <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-background to-muted/20 pt-16">
+      <div className="container text-center">
+        <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
+          {/* Status badge */}
+          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-mobile-small">
+            Available for new opportunities
+          </Badge>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Terminal-style header */}
-        <div className="terminal-window max-w-4xl mx-auto mb-8 p-8 pt-12">
-          <div className="code-block mb-6">
-            <span className="text-green-500">$</span> <span className="text-blue-500">whoami</span>
-            <br />
-            <span className="text-muted-foreground">
-              indrawan-lisanto@portfolio:~$ Software Engineer & Lifelong Learner
-            </span>
+          {/* Main heading */}
+          <div className="space-y-4">
+            <h1 className="text-mobile-h1 leading-tight">
+              Hi, I'm <span className="gradient-text">Indrawan Lisanto</span>
+            </h1>
+            <p className="text-mobile-h3 text-muted-foreground font-normal">Software Engineer & Full-Stack Developer</p>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 glitch-text" data-text="< DEVELOPER />">
-            {"< DEVELOPER />"}
-          </h1>
+          {/* Description */}
+          <p className="text-mobile-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Passionate about building scalable applications with React Native, Next.js, and Node.js. 6+ years of
+            experience creating solutions for enterprise clients.
+          </p>
 
-          <div className="code-block mb-8">
-            <span className="text-purple-500">const</span> <span className="text-blue-500">developer</span> = {"{"}
-            <br />
-            <span className="ml-4 text-orange-500">name:</span>{" "}
-            <span className="text-green-500">"Indrawan Lisanto"</span>,
-            <br />
-            <span className="ml-4 text-orange-500">experience:</span>{" "}
-            <span className="text-yellow-500">"6+ years"</span>,
-            <br />
-            <span className="ml-4 text-orange-500">specialization:</span>{" "}
-            <span className="text-green-500">"React Native & Full-Stack"</span>,
-            <br />
-            <span className="ml-4 text-orange-500">mission:</span>{" "}
-            <span className="text-green-500">"Building scalable systems"</span>
-            <br />
-            {"};"}
+          {/* Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-lg mx-auto">
+            <div className="text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">6+</div>
+              <div className="text-mobile-small text-muted-foreground">Years</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">50+</div>
+              <div className="text-mobile-small text-muted-foreground">Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">8</div>
+              <div className="text-mobile-small text-muted-foreground">Companies</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">100K+</div>
+              <div className="text-mobile-small text-muted-foreground">Users</div>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => scrollToSection("#projects")}
-              className="w-full sm:w-auto font-mono border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              [VIEW_PROJECTS]
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-mobile-body"
               onClick={() => scrollToSection("#contact")}
-              className="w-full sm:w-auto font-mono border-2 border-dashed border-muted-foreground text-muted-foreground hover:border-solid hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300"
             >
-              {"{ CONTACT_ME }"}
+              <Mail className="mr-2 h-4 w-4" />
+              Get In Touch
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-mobile-body bg-transparent"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
             </Button>
           </div>
-        </div>
 
-        {/* Animated cursor */}
-        <div className="flex justify-center items-center mt-8">
-          <span className="text-primary animate-pulse text-2xl font-mono">_</span>
+          {/* Scroll indicator */}
+          <div className="pt-8">
+            <button
+              onClick={() => scrollToSection("#skills")}
+              className="animate-bounce text-primary hover:text-primary/80 transition-colors"
+            >
+              <ArrowDown className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

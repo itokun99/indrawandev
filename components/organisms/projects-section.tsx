@@ -1,199 +1,125 @@
 "use client"
 
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Github, ExternalLink, Smartphone, Globe, Database, Server, Code } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { ExternalLink, Github } from "lucide-react"
+import Image from "next/image"
 
-const allProjects = [
+const featuredProjects = [
   {
-    id: 1,
-    title: "DuitQu - Money Management App",
+    title: "Enterprise Banking App",
     description:
-      "A comprehensive money management application built from the ground up with modern React Native architecture.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React Native", "TypeScript", "Firebase", "Go", "PostgreSQL"],
-    githubUrl: "#",
+      "React Native application for Bank Rakyat Indonesia (BRI) serving 100K+ users with core banking features.",
+    image: "/placeholder.svg?height=200&width=300",
+    technologies: ["React Native", "Node.js", "PostgreSQL", "Apigee"],
     liveUrl: "#",
-    icon: Smartphone,
-    status: "Production",
+    githubUrl: "#",
   },
   {
-    id: 2,
-    title: "Astra Honda - Mokita App",
-    description:
-      "Cross-platform mobile application for 26 Astra Honda dealers with E-Commerce and Service Booking features.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React Native", "Redux", "TypeScript", "REST API"],
-    githubUrl: "#",
+    title: "HRIS Management System",
+    description: "Complete redesign of HR system with modern React stack, improving user navigation by 40%.",
+    image: "/placeholder.svg?height=200&width=300",
+    technologies: ["React.js", "Next.js", "TypeScript", "PostgreSQL"],
     liveUrl: "#",
-    icon: Smartphone,
-    status: "Enterprise",
+    githubUrl: "#",
+  },
+]
+
+const otherProjects = [
+  {
+    title: "E-Learning Platform",
+    description: "Front-end overhaul of e-course platform boosting performance by 25%.",
+    technologies: ["React.js", "Next.js", "TypeScript"],
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
-    id: 3,
-    title: "PermataBank Enterprise Business",
-    description:
-      "Responsive web application for Permata Enterprise Business ecosystem with 40% performance improvement.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React.js", "TypeScript", "Tailwind CSS", "REST API"],
-    githubUrl: "#",
+    title: "TUV Nord System",
+    description: "Unified front-end architecture accelerating development by 60%.",
+    technologies: ["React.js", "TypeScript", "AWS"],
     liveUrl: "#",
-    icon: Globe,
-    status: "Enterprise",
+    githubUrl: "#",
   },
   {
-    id: 4,
-    title: "Telkomsel by.U Mobile App",
-    description: "Core features development for by.U mobile app including payment, ordering, and loyalty systems.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React Native", "Redux", "GraphQL", "TypeScript"],
-    githubUrl: "#",
+    title: "Finance Dashboard",
+    description: "Internal finance dashboard with GraphQL and atomic design.",
+    technologies: ["React.js", "GraphQL", "Node.js"],
     liveUrl: "#",
-    icon: Smartphone,
-    status: "Enterprise",
+    githubUrl: "#",
   },
   {
-    id: 5,
-    title: "XPresensi & XLibrary Suite",
-    description:
-      "Educational information system with attendance tracking and digital library features using RFID and AI.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React Native", "React.js", "AI", "RFID", "Tailwind CSS"],
-    githubUrl: "#",
+    title: "Multi-Dealer App",
+    description: "Mobile app managing 26+ dealer locations with real-time sync.",
+    technologies: ["React Native", "Firebase", "Node.js"],
     liveUrl: "#",
-    icon: Database,
-    status: "Production",
-  },
-  {
-    id: 6,
-    title: "Sani V2 HRIS",
-    description:
-      "Modern Human Resource Information System with complete frontend redesign and microservices architecture.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React.js", "TypeScript", "ShadcnUI", "Docker", "Microservices"],
     githubUrl: "#",
-    liveUrl: "#",
-    icon: Server,
-    status: "Production",
-  },
-  {
-    id: 7,
-    title: "BRIAPI Banking Microservices",
-    description: "Core banking microservices for Bank Rakyat Indonesia handling millions of daily transactions.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["Go", "Python", "Kubernetes", "Apigee", "Microservices"],
-    githubUrl: "#",
-    liveUrl: "#",
-    icon: Server,
-    status: "Enterprise",
-  },
-  {
-    id: 8,
-    title: "TUV Nord Unified System",
-    description: "Unified front-end architecture for multiple internal applications with 60% development acceleration.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["React.js", "TypeScript", "Design System", "REST API"],
-    githubUrl: "#",
-    liveUrl: "#",
-    icon: Globe,
-    status: "Enterprise",
-  },
-  {
-    id: 9,
-    title: "Vokadash - Admin Dashboard Kit",
-    description: "Open source NPM package providing tooling for customizable and efficient admin dashboards.",
-    image: "/placeholder.svg?height=200&width=350",
-    techStack: ["Vite", "Tanstack Query", "Jotai", "TailwindCSS", "ShadcnUI"],
-    githubUrl: "#",
-    liveUrl: "#",
-    icon: Code,
-    status: "Open Source",
   },
 ]
 
 export function ProjectsSection() {
-  const [visibleCount, setVisibleCount] = useState(6)
-  const [isLoading, setIsLoading] = useState(false)
-
-  const loadMore = async () => {
-    setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1200))
-    setVisibleCount((prev) => Math.min(prev + 3, allProjects.length))
-    setIsLoading(false)
-  }
-
-  const visibleProjects = allProjects.slice(0, visibleCount)
-  const hasMore = visibleCount < allProjects.length
-
   return (
-    <section id="projects" className="py-20 relative scroll-offset">
-      <div className="absolute inset-0 tech-grid opacity-30"></div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="terminal-window max-w-2xl mx-auto p-6 pt-12 mb-8">
-            <div className="code-block">
-              <span className="text-green-500">$</span> <span className="text-blue-500">git log --oneline</span>
-              <br />
-              <span className="text-muted-foreground">{allProjects.length} commits (projects) found</span>
-            </div>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-mono">
-            {"<"}
-            <span className="text-primary">MY_LATEST_WORK</span>
-            {" />"}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-mono">
-            // Enterprise applications and innovative solutions
+    <section id="projects" className="section-padding scroll-offset">
+      <div className="container">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-mobile-h2 mb-3 sm:mb-4 gradient-text">Featured Projects</h2>
+          <p className="text-mobile-body text-muted-foreground max-w-2xl mx-auto">
+            Recent work and contributions to various projects
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {visibleProjects.map((project, index) => {
-            const IconComponent = project.icon
-            return (
-              <Card
-                key={project.id}
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 terminal-window pt-8 border-2 border-dashed hover:border-solid"
-              >
-                <div className="aspect-video overflow-hidden rounded-t-lg relative bg-gradient-to-br from-primary/10 to-blue-600/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <IconComponent className="h-16 w-16 text-primary/60" />
-                  </div>
-                  <div className="absolute top-2 left-2 bg-background/90 px-2 py-1 rounded text-xs font-mono border border-dashed">
-                    [{String(index + 1).padStart(2, "0")}]
-                  </div>
-                  <div className="absolute top-2 right-2">
-                    <Badge
-                      variant={
-                        project.status === "Enterprise"
-                          ? "default"
-                          : project.status === "Open Source"
-                            ? "secondary"
-                            : "outline"
-                      }
-                      className="font-mono text-xs"
-                    >
-                      {project.status.toUpperCase()}
+        {/* Featured Projects */}
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          {featuredProjects.map((project) => (
+            <Card key={project.title} className="modern-card overflow-hidden">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
+                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+              </div>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-mobile-h3">{project.title}</CardTitle>
+                <CardDescription className="text-mobile-small">{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="outline" className="border-primary/20 text-primary text-xs">
+                      {tech}
                     </Badge>
-                  </div>
+                  ))}
                 </div>
-                <CardHeader className="pb-4">
-                  <CardTitle className="group-hover:text-primary transition-colors font-mono text-lg mb-3">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="font-mono text-sm leading-relaxed">{project.description}</CardDescription>
+                <div className="flex gap-2 sm:gap-3">
+                  <Button size="sm" className="bg-primary hover:bg-primary/90 text-mobile-small flex-1">
+                    <ExternalLink className="mr-1 h-3 w-3" />
+                    Demo
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-mobile-small flex-1 bg-transparent"
+                  >
+                    <Github className="mr-1 h-3 w-3" />
+                    Code
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Other Projects */}
+        <div>
+          <h3 className="text-mobile-h3 mb-4 sm:mb-6 text-center">Other Projects</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {otherProjects.map((project) => (
+              <Card key={project.title} className="modern-card">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base sm:text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-mobile-small">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.techStack.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="text-xs font-mono border-dashed hover:border-solid transition-all"
-                      >
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <Badge key={tech} variant="outline" className="border-primary/20 text-primary text-xs">
                         {tech}
                       </Badge>
                     ))}
@@ -202,50 +128,25 @@ export function ProjectsSection() {
                     <Button
                       size="sm"
                       variant="outline"
-                      asChild
-                      className="font-mono border-dashed border-muted-foreground text-muted-foreground hover:border-solid hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 bg-transparent"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1 text-xs bg-transparent"
                     >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-1" />
-                        CODE
-                      </a>
+                      <ExternalLink className="mr-1 h-3 w-3" />
+                      Demo
                     </Button>
                     <Button
                       size="sm"
-                      asChild
-                      className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                      variant="outline"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1 text-xs bg-transparent"
                     >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-1" />
-                        DEMO
-                      </a>
+                      <Github className="mr-1 h-3 w-3" />
+                      Code
                     </Button>
                   </div>
                 </CardContent>
               </Card>
-            )
-          })}
-        </div>
-
-        {hasMore && (
-          <div className="text-center mt-12">
-            <Button
-              onClick={loadMore}
-              disabled={isLoading}
-              className="font-mono border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              size="lg"
-            >
-              {isLoading ? (
-                <>
-                  <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
-                  LOADING_PROJECTS...
-                </>
-              ) : (
-                `LOAD_MORE() // ${allProjects.length - visibleCount} remaining`
-              )}
-            </Button>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </section>
   )

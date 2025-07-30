@@ -1,40 +1,41 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Github, Linkedin, Twitter, Mail } from "lucide-react"
 
-const socialLinks = [
-  {
-    href: "https://github.com/itokun99",
-    icon: Github,
-    label: "GitHub",
-  },
-  {
-    href: "https://linkedin.com/in/indrawan-lisanto",
-    icon: Linkedin,
-    label: "LinkedIn",
-  },
-  {
-    href: "https://twitter.com/byito_dev",
-    icon: Twitter,
-    label: "Twitter",
-  },
-]
+export function SocialLinks() {
+  const socialLinks = [
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/itokun99",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/indrawan-lisanto",
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      url: "https://twitter.com/byito_dev",
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:ito@byito.dev",
+    },
+  ]
 
-interface SocialLinksProps {
-  variant?: "default" | "footer"
-}
-
-export function SocialLinks({ variant = "default" }: SocialLinksProps) {
   return (
-    <div className={`flex items-center ${variant === "footer" ? "space-x-2" : "space-x-1"}`}>
+    <div className="flex gap-2">
       {socialLinks.map((link) => (
         <Button
-          key={link.href}
-          variant="ghost"
-          size="icon"
+          key={link.name}
+          variant="outline"
+          size="sm"
+          className="border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground p-2 bg-transparent"
           asChild
-          className={variant === "footer" ? "h-8 w-8" : "h-9 w-9"}
         >
-          <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+          <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
             <link.icon className="h-4 w-4" />
           </a>
         </Button>

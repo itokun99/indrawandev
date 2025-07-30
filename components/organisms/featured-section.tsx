@@ -81,30 +81,30 @@ export function FeaturedSection() {
   const hasMore = visibleCount < allFeaturedInsights.length
 
   return (
-    <section className="py-20 bg-muted/30 relative">
+    <section className="py-12 sm:py-16 md:py-20 bg-muted/30 relative">
       {/* Grid background */}
       <div className="absolute inset-0 tech-grid opacity-50"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="terminal-window max-w-2xl mx-auto p-6 pt-12 mb-8">
-            <div className="code-block">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="terminal-window max-w-2xl mx-auto p-4 sm:p-6 pt-8 sm:pt-10 md:pt-12 mb-6 sm:mb-8">
+            <div className="code-block text-xs sm:text-sm">
               <span className="text-green-500">$</span> <span className="text-blue-500">ls -la /insights</span>
               <br />
               <span className="text-muted-foreground">total {allFeaturedInsights.length} featured_articles</span>
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 font-mono">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 font-mono">
             {"<"}
             <span className="text-primary">FEATURED_INSIGHTS</span>
             {" />"}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-mono">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-mono text-sm sm:text-base">
             // Sharing knowledge from building enterprise applications
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {visibleInsights.map((insight, index) => {
             const IconComponent = insight.icon
             return (
@@ -114,35 +114,35 @@ export function FeaturedSection() {
               >
                 <div className="aspect-video overflow-hidden rounded-t-lg relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-600/20 flex items-center justify-center">
-                    <IconComponent className="h-16 w-16 text-primary" />
+                    <IconComponent className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 text-primary" />
                   </div>
                   <div className="absolute top-2 left-2 bg-background/80 px-2 py-1 rounded text-xs font-mono">
                     [{String(index + 1).padStart(2, "0")}]
                   </div>
                 </div>
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge variant="secondary" className="font-mono border border-dashed">
+                <CardHeader className="pb-3 sm:pb-4 p-3 sm:p-4 md:p-6">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <Badge variant="secondary" className="font-mono border border-dashed text-xs">
                       {insight.category.toUpperCase()}
                     </Badge>
                     <div className="text-xs text-muted-foreground font-mono">
                       [{String(index + 1).padStart(2, "0")}]
                     </div>
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors font-mono text-lg leading-tight">
+                  <CardTitle className="group-hover:text-primary transition-colors font-mono text-base sm:text-lg leading-tight">
                     {insight.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-4 font-mono text-sm leading-relaxed">
+                <CardContent className="p-3 sm:p-4 md:p-6 pt-0">
+                  <CardDescription className="mb-3 sm:mb-4 font-mono text-xs sm:text-sm leading-relaxed">
                     {insight.description}
                   </CardDescription>
                   <Link
                     href={insight.link}
-                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-mono text-sm border-b border-dashed border-primary hover:border-solid"
+                    className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-mono text-xs sm:text-sm border-b border-dashed border-primary hover:border-solid"
                   >
                     READ_MORE()
-                    <ArrowRight className="ml-1 h-4 w-4" />
+                    <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                   </Link>
                 </CardContent>
               </Card>
@@ -151,16 +151,16 @@ export function FeaturedSection() {
         </div>
 
         {hasMore && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Button
               onClick={loadMore}
               disabled={isLoading}
-              className="font-mono border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="font-mono border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-xs sm:text-sm px-4 sm:px-6"
               size="lg"
             >
               {isLoading ? (
                 <>
-                  <div className="animate-spin mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
+                  <div className="animate-spin mr-2 h-3 w-3 sm:h-4 sm:w-4 border-2 border-current border-t-transparent rounded-full"></div>
                   LOADING...
                 </>
               ) : (
