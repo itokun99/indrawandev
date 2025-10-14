@@ -56,9 +56,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Comic Sans font stack for performance (no external font fetch) */
-    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-      sans-serif;
+    font-family: Monaco, ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0.015em;
