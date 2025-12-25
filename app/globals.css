@@ -1,121 +1,170 @@
-/* Keep existing variables and utility layers */
+/* Complete redesign for cyberpunk minimalist theme */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 258 100% 69%;
-    --primary-foreground: 255 255 255;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 258 100% 69%;
-    --radius: 0.5rem;
-    --font-poppins: "Poppins", sans-serif;
+    --background: #050505;
+    --foreground: #ffffff;
+    --accent: #00ff00;
+    --accent-secondary: #ffaa00;
+    --border: #1a1a1a;
+    --muted: #333333;
+    --muted-foreground: #888888;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 13%;
+    --secondary-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --card: #050505;
+    --card-foreground: #ffffff;
+    --popover: #050505;
+    --popover-foreground: #ffffff;
+    --input: #1a1a1a;
+    --ring: #00ff00;
+    --border: #1a1a1a;
+    --radius: 0.375rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 258 100% 75%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 258 100% 75%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-poppins), system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 0.015em;
+    font-family: var(--font-mono), "Courier New", monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
     font-weight: 400;
+    overflow-x: hidden;
   }
 
-  /* Give headings a bit more breathing room */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    letter-spacing: 0.02em;
+    @apply font-bold;
+    font-family: var(--font-mono);
+    letter-spacing: 0.03em;
   }
 
-  /* Subtle tracking for common text elements */
-  p,
-  li,
-  a,
-  small {
-    letter-spacing: 0.01em;
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    @apply text-accent;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Blinking cursor effect */
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .cursor-blink {
+    animation: blink 1s infinite;
+  }
+
+  a {
+    @apply text-accent underline transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-accent-secondary;
+  }
+
+  /* Terminal-like styling */
+  code {
+    @apply bg-muted px-2 py-1 rounded text-accent font-mono text-sm;
+  }
+
+  pre {
+    @apply bg-muted p-4 rounded overflow-x-auto border border-border;
   }
 }
 
-/* Utilities */
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+@layer components {
+  .terminal-button {
+    @apply px-6 py-2 border-2 border-accent text-accent font-mono font-bold transition-all duration-200;
+  }
+
+  .terminal-button:hover {
+    @apply bg-accent text-background shadow-lg shadow-accent/50;
+  }
+
+  .terminal-button-secondary {
+    @apply px-6 py-2 border-2 border-accent-secondary text-accent-secondary font-mono font-bold transition-all duration-200;
+  }
+
+  .terminal-button-secondary:hover {
+    @apply bg-accent-secondary text-background shadow-lg shadow-accent-secondary/50;
+  }
+
+  .terminal-card {
+    @apply border border-border bg-black p-6 rounded hover:border-accent transition-colors duration-300;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-accent mb-8 flex items-center gap-3;
+  }
+
+  .section-title::before {
+    content: "$ ";
+    @apply text-accent-secondary;
+  }
+
+  .skill-tag {
+    @apply inline-block px-3 py-1 border border-accent text-accent text-sm font-mono rounded mr-2 mb-2 hover:bg-accent hover:text-background transition-all duration-200;
+  }
+
+  .skill-tag.highlighted {
+    @apply bg-accent text-background border-accent shadow-lg shadow-accent/50;
+  }
+
+  /* Code snippet styling */
+  .code-snippet {
+    @apply bg-muted p-4 rounded font-mono text-sm text-accent border border-border overflow-x-auto my-4;
+  }
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 5rem;
 }
-.scroll-offset {
-  scroll-margin-top: 4rem;
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-secondary;
 }

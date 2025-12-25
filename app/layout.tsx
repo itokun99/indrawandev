@@ -3,72 +3,62 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import { getWebConfig } from "@/lib/data"
-import { Poppins } from "next/font/google"
+import { Kode_Mono } from "next/font/google"
 
 const webConfig = getWebConfig()
-const poppins = Poppins({
+const kodeMono = Kode_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-mono",
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL(webConfig.site.url),
   title: {
-    default: webConfig.site.title,
-    template: "%s | " + webConfig.site.author,
+    default: "meganecode.dev | Senior Software Engineer",
+    template: "%s | meganecode.dev",
   },
-  description: webConfig.site.description,
-  keywords: webConfig.site.keywords,
-  authors: [{ name: webConfig.site.author, url: webConfig.site.url }],
-  creator: webConfig.site.author,
-  publisher: webConfig.site.author,
+  description: "The Intellectual Knight. Crafting robust, human-verified solutions. 100% Logic, 0% AI Magic.",
+  keywords: ["Software Engineer", "React Native", "Full-Stack Developer", "TypeScript", "Go", "Node.js"],
+  authors: [{ name: "Indrawan Lisanto", url: webConfig.site.url }],
+  creator: "Indrawan Lisanto",
+  publisher: "Indrawan Lisanto",
   alternates: {
     canonical: webConfig.site.url,
   },
   openGraph: {
-    title: webConfig.site.title,
-    description: webConfig.site.description,
+    title: "meganecode.dev",
+    description: "Senior Software Engineer crafting human-verified solutions",
     url: webConfig.site.url,
-    siteName: webConfig.site.author,
+    siteName: "meganecode.dev",
     type: "website",
-    images: [{ url: webConfig.site.logo, width: 512, height: 512, alt: webConfig.site.title }],
   },
   twitter: {
     card: "summary_large_image",
-    title: webConfig.site.title,
-    description: webConfig.site.description,
-    images: [webConfig.site.logo],
-    creator: webConfig.site.author,
+    title: "meganecode.dev",
+    description: "Senior Software Engineer. 100% Logic, 0% AI Magic.",
+    creator: "@indrawandev",
   },
   robots: {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: "/placeholder-logo.svg",
-    shortcut: "/placeholder-logo.svg",
-    apple: "/placeholder-logo.svg",
-  },
-  generator: "v0.dev",
+    generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  themeColor: "#050505",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={poppins.variable}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body className={kodeMono.variable}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>
