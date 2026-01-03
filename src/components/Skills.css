@@ -1,0 +1,24 @@
+.skill-category {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-category::before {
+  content: "$ ";
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.skill-category:hover {
+  border-color: #00ff00;
+  background: rgba(0, 255, 0, 0.15);
+  transform: translateX(4px);
+}
+
+.skill-item {
+  transition: color 0.2s ease;
+}
+
+.skill-item:hover {
+  color: #00ff00;
+}

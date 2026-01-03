@@ -1,0 +1,31 @@
+.experience-item {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.experience-item:hover {
+  padding-left: 24px;
+}
+
+.experience-item:hover .company-name {
+  color: #00ff00;
+}
+
+.company-name {
+  transition: color 0.2s ease;
+}
+
+.achievement-item {
+  transition: all 0.2s ease;
+}
+
+.achievement-item:hover {
+  padding-left: 24px;
+  color: #00ff00;
+}
+
+.achievement-item::before {
+  content: "$ ";
+  color: #00ff00;
+  margin-right: 4px;
+}
