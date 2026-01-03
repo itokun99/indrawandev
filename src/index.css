@@ -1,4 +1,14 @@
+@import "tailwindcss";
+
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400;500;600;700&display=swap");
+
+@theme {
+  --font-mono: "Kode Mono", monospace;
+  --color-bg-dark: #050505;
+  --color-text-white: #ffffff;
+  --color-accent-green: #00ff00;
+  --color-accent-amber: #ffaa00;
+}
 
 * {
   margin: 0;
