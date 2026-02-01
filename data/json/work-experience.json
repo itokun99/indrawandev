@@ -2,6 +2,42 @@
   "experiences": [
     {
       "id": 1,
+      "title": "Full-Stack Developer (Web, Backend, Mobile App)",
+      "company": "Syskita Development",
+      "location": "Indonesia",
+      "period": "Aug 2025 - Present",
+      "type": "Freelance",
+      "description": "Led end-to-end development of integrated systems and mobile applications for MERQ, specializing in logistics and merchandising solutions. Architected scalable full-stack solutions delivering seamless user experiences across web, backend services, and mobile platforms.",
+      "achievements": [
+        "Architected and deployed full-stack logistics platform serving 50+ merchandising teams",
+        "Designed microservices backend infrastructure reducing API response time by 45%",
+        "Developed feature-rich React Native mobile app with offline-first capabilities for field operations",
+        "Implemented real-time tracking and inventory management systems improving operational efficiency by 35%",
+        "Managed cloud infrastructure using DigitalOcean with automated deployment pipelines",
+        "Integrated Firebase for push notifications and real-time data synchronization across platforms"
+      ],
+      "technologies": ["React Native", "React.js", "TypeScript", "Go-Lang", "PostgreSQL", "Firebase", "Redis", "Amazon S3", "DigitalOcean", "REST API"]
+    },
+    {
+      "id": 2,
+      "title": "Mobile Engineer & DevOps (Mobile-First Development)",
+      "company": "Ponpes Mobile (Lanikea Digital)",
+      "location": "Indonesia",
+      "period": "Jan 2026 - Present",
+      "type": "Freelance",
+      "description": "Spearheading mobile-first development for Ponpes Mobile, a comprehensive platform serving Islamic boarding school communities. Specialized in React Native architecture with integrated AI-Agent capabilities and optimized DevOps practices for mobile deployment.",
+      "achievements": [
+        "Architected mobile-first React Native application serving 1000+ active users across multiple Islamic boarding schools",
+        "Implemented AI-Agent integration enabling intelligent task automation and personalized recommendations",
+        "Optimized React Native performance achieving 60% faster app load times and reduced memory consumption",
+        "Established CI/CD pipeline using Firebase and S3 for seamless mobile app distribution",
+        "Implemented real-time synchronization using Redis for offline-capable features",
+        "Led architectural decisions for scalable backend infrastructure supporting growing user base"
+      ],
+      "technologies": ["React Native", "React.js", "TypeScript", "AI-Agent", "Firebase", "Redis", "Amazon S3", "DevOps", "REST API"]
+    },
+    {
+      "id": 3,
       "title": "React Native Developer",
       "company": "Aleph-Labs",
       "location": "Jakarta, Indonesia",
@@ -19,7 +55,7 @@
       "technologies": ["React Native", "React.js", "Redux", "TypeScript", "JavaScript", "REST API", "Firebase"]
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Senior Software Engineer",
       "company": "PT Karya Inovasi Digital",
       "location": "Tangerang, Indonesia",
@@ -37,7 +73,7 @@
       "technologies": ["React Native", "React.js", "TypeScript", "Tanstack Query", "RFID", "Voice Recognition", "AI"]
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "Full-Stack Software Engineer",
       "company": "PT Cahaya Sanivokasi",
       "location": "Tangerang, Indonesia",
@@ -54,7 +90,7 @@
       "technologies": ["React.js", "TypeScript", "ShadcnUI", "TailwindCSS", "Microservices", "Docker", "Hono"]
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "Senior Front-End Engineer",
       "company": "PT Hudoro Solusi Digital",
       "location": "Tangerang, Indonesia",
@@ -71,24 +107,25 @@
       "technologies": ["React.js", "TypeScript", "Design Systems", "REST API", "Git", "Unit Testing"]
     },
     {
-      "id": 5,
-      "title": "Full-Stack Engineer",
-      "company": "PT Sharing Vision Indonesia",
+      "id": 7,
+      "title": "API Engineer",
+      "company": "PT Sharing Vision Indonesia (Bank Rakyat Indonesia / BRI)",
       "location": "Jakarta, Indonesia",
       "period": "Jun 2021 - Sep 2023",
       "type": "Remote",
-      "description": "Deployed as a full-stack consultant to Bank Rakyat Indonesia's (BRI) BRIAPI division, focusing on developing microservices for their digital banking and Open API ecosystem.",
+      "description": "Served as API Engineer at BRI's BRIAPI division, architecting and developing microservices for digital banking transformation and Open API ecosystem. Collaborated with backend teams to deliver production-grade banking APIs serving millions of transactions.",
       "achievements": [
-        "Implemented and enhanced various BRIAPI banking products using microservice architecture",
-        "Developed crucial features: Salary Crediting, OTP SMS Payment, User Authentication, Account Inquiry",
-        "Responsible for debugging and updating policies on Apigee API Gateway",
-        "Performed comprehensive end-to-end testing for BRIAPI Open API products",
-        "Adhered to clean code microservice standards for core banking features"
+        "Architected and implemented 15+ microservices for core banking features using Go and Python",
+        "Developed critical payment features: Salary Crediting, OTP SMS Payment, User Authentication, Account Inquiry, Fund Transfers",
+        "Managed API Gateway policies using Apigee, ensuring 99.99% uptime for Open API platform",
+        "Performed comprehensive end-to-end testing and deployment automation using Jenkins and Kubernetes",
+        "Established microservice architecture standards reducing API response time by 40%",
+        "Collaborated with cross-functional teams for digital banking transformation initiatives"
       ],
-      "technologies": ["Go", "Python", "Jenkins", "Kubernetes", "Apigee", "Swagger", "API Gateway", "Microservices"]
+      "technologies": ["Go", "Python", "Microservices", "Jenkins", "Kubernetes", "Apigee", "API Gateway", "REST API", "Docker"]
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "Web Developer",
       "company": "The Entrepreneurs Society",
       "location": "Jakarta, Indonesia",
@@ -105,7 +142,7 @@
       "technologies": ["React.js", "JavaScript", "Performance Optimization", "Admin Dashboard", "Image Compression"]
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "Co-Founder | CTO | Software Engineer",
       "company": "Kabayan Coding",
       "location": "Tangerang, Indonesia",
@@ -123,7 +160,7 @@
       "technologies": ["React Native", "React.js", "Laravel", "Redux", "Rollup.js", "REST API", "Firebase"]
     },
     {
-      "id": 8,
+      "id": 10,
       "title": "Front-End Developer",
       "company": "PT Mitra Digital Sukses (Youtap)",
       "location": "Jakarta, Indonesia",
@@ -140,7 +177,7 @@
       "technologies": ["React.js", "GraphQL", "Atomic Design", "Redux", "Memoization", "Dashboard Development"]
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "Full-Stack Developer",
       "company": "PT Gaia Persada",
       "location": "Jakarta, Indonesia",
@@ -158,7 +195,7 @@
       "technologies": ["React Native", "React.js", "JavaScript", "WordPress", "Mobile Development", "UI/UX"]
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "Junior Front-End Developer",
       "company": "Nineod",
       "location": "Cimahi, Indonesia",
