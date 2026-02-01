@@ -72,20 +72,21 @@
     },
     {
       "id": 5,
-      "title": "Full-Stack Engineer",
-      "company": "PT Sharing Vision Indonesia",
+      "title": "API Engineer",
+      "company": "PT Sharing Vision Indonesia (Bank Rakyat Indonesia / BRI)",
       "location": "Jakarta, Indonesia",
       "period": "Jun 2021 - Sep 2023",
       "type": "Remote",
-      "description": "Deployed as a full-stack consultant to Bank Rakyat Indonesia's (BRI) BRIAPI division, focusing on developing microservices for their digital banking and Open API ecosystem.",
+      "description": "Served as API Engineer at BRI's BRIAPI division, architecting and developing microservices for digital banking transformation and Open API ecosystem. Collaborated with backend teams to deliver production-grade banking APIs serving millions of transactions.",
       "achievements": [
-        "Implemented and enhanced various BRIAPI banking products using microservice architecture",
-        "Developed crucial features: Salary Crediting, OTP SMS Payment, User Authentication, Account Inquiry",
-        "Responsible for debugging and updating policies on Apigee API Gateway",
-        "Performed comprehensive end-to-end testing for BRIAPI Open API products",
-        "Adhered to clean code microservice standards for core banking features"
+        "Architected and implemented 15+ microservices for core banking features using Go and Python",
+        "Developed critical payment features: Salary Crediting, OTP SMS Payment, User Authentication, Account Inquiry, Fund Transfers",
+        "Managed API Gateway policies using Apigee, ensuring 99.99% uptime for Open API platform",
+        "Performed comprehensive end-to-end testing and deployment automation using Jenkins and Kubernetes",
+        "Established microservice architecture standards reducing API response time by 40%",
+        "Collaborated with cross-functional teams for digital banking transformation initiatives"
       ],
-      "technologies": ["Go", "Python", "Jenkins", "Kubernetes", "Apigee", "Swagger", "API Gateway", "Microservices"]
+      "technologies": ["Go", "Python", "Microservices", "Jenkins", "Kubernetes", "Apigee", "API Gateway", "REST API", "Docker"]
     },
     {
       "id": 6,

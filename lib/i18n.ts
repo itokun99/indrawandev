@@ -3,11 +3,18 @@ export const translations = {
     header: {
       title: "Indrawan Lisanto",
     },
+    nav: {
+      skills: "Skills",
+      experience: "Experience",
+      projects: "Projects",
+      videos: "Videos",
+      connect: "Connect",
+    },
     hero: {
       title: "Indrawan Lisanto",
       role: "Senior Software Engineer",
+      subtitle: "Building robust, scalable systems with modern technologies. Specializing in React Native, Go, Microservices, and API Architecture.",
       email: "Email",
-      phone: "Phone",
       resume: "Resume",
     },
     skills: {
@@ -37,11 +44,18 @@ export const translations = {
     header: {
       title: "Indrawan Lisanto",
     },
+    nav: {
+      skills: "Keahlian",
+      experience: "Pengalaman",
+      projects: "Proyek",
+      videos: "Video",
+      connect: "Terhubung",
+    },
     hero: {
       title: "Indrawan Lisanto",
       role: "Senior Software Engineer",
+      subtitle: "Membangun sistem yang robust dan scalable dengan teknologi modern. Spesialisasi dalam React Native, Go, Microservices, dan API Architecture.",
       email: "Email",
-      phone: "Telepon",
       resume: "Lihat CV",
     },
     skills: {

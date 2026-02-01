@@ -14,10 +14,12 @@ import { getLanguage, t } from "@/lib/i18n"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github, Menu, X } from "lucide-react"
+import { HeroScene } from "@/components/3d/hero-scene"
 
 export default function Home() {
   const [lang, setLang] = useState<"en" | "id">("en")
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const personal = getPersonalInfo()
   const skills = getSkills()
   const projects = getProjects()
@@ -31,6 +33,14 @@ export default function Home() {
 
   const translate = (key: string) => t(lang, key)
 
+  const navItems = [
+    { label: translate("nav.skills"), href: "#skills" },
+    { label: translate("nav.experience"), href: "#experience" },
+    { label: translate("nav.projects"), href: "#projects" },
+    { label: translate("nav.videos"), href: "#videos" },
+    { label: translate("nav.connect"), href: "#connect" },
+  ]
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 underline">
@@ -39,49 +49,109 @@ export default function Home() {
 
       {/* Header */}
       <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <h1 className="text-lg font-semibold">{translate("header.title")}</h1>
-          <div className="flex items-center gap-4">
-            <select
-              value={lang}
-              onChange={(e) => setLang(e.target.value as "en" | "id")}
-              className="text-sm px-2 py-1 rounded border border-border bg-background"
-            >
-              <option value="en">English</option>
-              <option value="id">Indonesia</option>
-            </select>
-            <ThemeToggle />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
+          <div className="flex items-center justify-between">
+            <h1 className="text-lg font-semibold">{translate("header.title")}</h1>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden sm:flex items-center gap-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* Right Controls */}
+            <div className="flex items-center gap-3">
+              <select
+                value={lang}
+                onChange={(e) => setLang(e.target.value as "en" | "id")}
+                className="text-sm px-2 py-1 rounded border border-border bg-background hidden sm:block"
+              >
+                <option value="en">EN</option>
+                <option value="id">ID</option>
+              </select>
+              <ThemeToggle />
+
+              {/* Mobile Menu Toggle */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="sm:hidden"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <nav className="sm:hidden pt-4 pb-2 space-y-2 border-t border-border mt-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="pt-2 border-t border-border mt-2">
+                <select
+                  value={lang}
+                  onChange={(e) => setLang(e.target.value as "en" | "id")}
+                  className="text-sm px-2 py-1 rounded border border-border bg-background w-full"
+                >
+                  <option value="en">English</option>
+                  <option value="id">Indonesia</option>
+                </select>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 
       <main id="main-content" className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-12">
         {/* Hero Section */}
-        <section className="space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{personal.name}</h2>
-            <p className="text-lg text-muted-foreground">{translate("hero.role")}</p>
-          </div>
-          <p className="text-base leading-relaxed text-foreground/90">
-            {personal.bio || "Building robust, scalable systems with React Native, TypeScript, and Go."}
-          </p>
-          <div className="flex flex-wrap gap-3 pt-4">
-            <Button variant="outline" size="sm" asChild>
-              <a href={`mailto:${personal.email}`}>{personal.email}</a>
-            </Button>
-            <Button variant="outline" size="sm" asChild>
-              <a href={`tel:${personal.phone.replace(/\s+/g, "")}`}>{personal.phone}</a>
-            </Button>
-            <Button variant="outline" size="sm" asChild>
-              <a href={personal.resume} target="_blank" rel="noopener noreferrer">
-                {translate("hero.resume")}
-              </a>
-            </Button>
+        <section className="space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Hero Content */}
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{personal.name}</h2>
+                <p className="text-lg text-muted-foreground">{translate("hero.role")}</p>
+              </div>
+              <p className="text-base leading-relaxed text-foreground/90">
+                {translate("hero.subtitle")}
+              </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <Button variant="outline" size="sm" asChild>
+                  <a href={`mailto:${personal.email}`}>{personal.email}</a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
+                  <a href={personal.resume} target="_blank" rel="noopener noreferrer">
+                    {translate("hero.resume")}
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* 3D Hero Scene */}
+            <div className="hidden lg:block h-96">
+              <HeroScene />
+            </div>
           </div>
         </section>
 
         {/* Skills Section */}
-        <section className="space-y-4">
+        <section id="skills" className="space-y-4">
           <h3 className="text-2xl font-semibold">{translate("skills.title")}</h3>
           <div className="space-y-4">
             {skills.categories.map((category: any) => (
@@ -100,7 +170,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section className="space-y-4">
+        <section id="experience" className="space-y-4">
           <h3 className="text-2xl font-semibold">{translate("experience.title")}</h3>
           <div className="space-y-4">
             {experiences.map((e: any) => (
@@ -136,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section className="space-y-4">
+        <section id="projects" className="space-y-4">
           <h3 className="text-2xl font-semibold">{translate("projects.title")}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[...projects.featured, ...projects.other].map((p: any) => (
@@ -176,7 +246,7 @@ export default function Home() {
         </section>
 
         {/* Videos Section */}
-        <section className="space-y-4">
+        <section id="videos" className="space-y-4">
           <h3 className="text-2xl font-semibold">{translate("videos.title")}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {videos.map((v: any) => (
@@ -199,7 +269,7 @@ export default function Home() {
         </section>
 
         {/* Connect Section */}
-        <section className="space-y-4">
+        <section id="connect" className="space-y-4">
           <h3 className="text-2xl font-semibold">{translate("connect.title")}</h3>
           <div className="flex flex-wrap gap-3">
             {social.map((s: any) => (
