@@ -1,0 +1,78 @@
+{
+  "title": "Agentic Workflow Architecture",
+  "description": "How I architect intelligence into enterprise systems",
+  "stages": [
+    {
+      "id": 1,
+      "name": "Discovery",
+      "icon": "🔍",
+      "description": "Understanding your business context, constraints, and integration points",
+      "activities": [
+        "Analyze enterprise systems and data flows",
+        "Identify AI value opportunities",
+        "Map integration boundaries with MCP"
+      ],
+      "duration": "1-2 weeks"
+    },
+    {
+      "id": 2,
+      "name": "Architecture Design",
+      "icon": "🏗️",
+      "description": "Designing agentic workflows and agent responsibilities",
+      "activities": [
+        "Define agent specializations",
+        "Design collaboration patterns",
+        "Plan safety and compliance boundaries"
+      ],
+      "duration": "2-3 weeks"
+    },
+    {
+      "id": 3,
+      "name": "Foundation Building",
+      "icon": "🛠️",
+      "description": "Setting up infrastructure and foundational systems",
+      "activities": [
+        "Deploy MCP servers",
+        "Build orchestration layer",
+        "Create monitoring and observability"
+      ],
+      "duration": "3-4 weeks"
+    },
+    {
+      "id": 4,
+      "name": "Agent Development",
+      "icon": "🤖",
+      "description": "Building and training individual agents",
+      "activities": [
+        "Implement agent logic",
+        "Fine-tune with enterprise context",
+        "Test collaboration patterns"
+      ],
+      "duration": "4-6 weeks"
+    },
+    {
+      "id": 5,
+      "name": "Integration & Testing",
+      "icon": "🔗",
+      "description": "Connecting agents to your systems at scale",
+      "activities": [
+        "Integrate with enterprise systems",
+        "Performance testing and optimization",
+        "Security and compliance verification"
+      ],
+      "duration": "2-3 weeks"
+    },
+    {
+      "id": 6,
+      "name": "Launch & Optimization",
+      "icon": "🚀",
+      "description": "Deploying and continuously improving the system",
+      "activities": [
+        "Gradual rollout to production",
+        "Monitor agent performance",
+        "Refine based on real-world usage"
+      ],
+      "duration": "Ongoing"
+    }
+  ]
+}

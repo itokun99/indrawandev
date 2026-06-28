@@ -24,11 +24,22 @@ const kodeMono = KodeMono({
 export const metadata: Metadata = {
   metadataBase: new URL(webConfig.site.url),
   title: {
-    default: "Indrawan Lisanto | Senior Software Engineer",
+    default: "Indrawan Lisanto | AI-Native Enterprise Architect",
     template: "%s | Indrawan Lisanto",
   },
-  description: "Senior Software Engineer specialized in React Native, Full-Stack Development, and scalable backend systems.",
-  keywords: ["Software Engineer", "React Native", "Full-Stack Developer", "TypeScript", "Go", "Node.js"],
+  description: "AI-Native Enterprise Software Architect building agentic workflows, open intelligence standards, and terminal-first developer tools.",
+  keywords: [
+    "AI-Native",
+    "Enterprise Architecture",
+    "Agentic Workflows",
+    "OpenCode",
+    "MCP",
+    "Terminal-First",
+    "Developer Tools",
+    "OMO",
+    "AI Agents",
+    "Enterprise AI",
+  ],
   authors: [{ name: "Indrawan Lisanto", url: webConfig.site.url }],
   creator: "Indrawan Lisanto",
   publisher: "Indrawan Lisanto",
@@ -36,8 +47,8 @@ export const metadata: Metadata = {
     canonical: webConfig.site.url,
   },
   openGraph: {
-    title: "Indrawan Lisanto",
-    description: "Senior Software Engineer specializing in React Native and Full-Stack Development",
+    title: "Indrawan Lisanto | AI-Native Enterprise Architect",
+    description: "Building AI-native enterprise systems through agentic workflows and open intelligence standards",
     url: webConfig.site.url,
     siteName: "indrawan.dev",
     type: "website",
@@ -45,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Indrawan Lisanto",
-    description: "Senior Software Engineer - React Native, Full-Stack, Backend Systems",
+    description: "AI-Native Enterprise Architect - Agentic Workflows, OpenCode, MCP, Terminal-First",
     creator: "@indrawandev",
   },
   robots: {

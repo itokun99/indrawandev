@@ -1,0 +1,35 @@
+{
+  "title": "Community & Speaking",
+  "description": "Building ecosystems where developers can explore AI-native architectures together",
+  "initiatives": [
+    {
+      "id": "opencode-community",
+      "name": "OpenCode Community",
+      "role": "Founder & Curator",
+      "description": "Monthly meetups and workshops exploring open intelligence standards and AI-native architecture patterns. Building a community of architects rethinking enterprise software.",
+      "memberCount": 850,
+      "frequency": "Bi-weekly",
+      "url": "https://opencode.community",
+      "focus": ["Architecture", "AI", "Open Source"]
+    },
+    {
+      "id": "ai-architecture-forum",
+      "name": "AI Architecture Forum",
+      "role": "Core Organizer",
+      "description": "Discussions on agentic patterns, OMO methodologies, and terminal-first development. Where architects share battle-tested approaches.",
+      "memberCount": 2300,
+      "frequency": "Weekly",
+      "url": "https://discord.gg/ai-architecture",
+      "focus": ["Agents", "OMO", "Architecture"]
+    },
+    {
+      "id": "speaking",
+      "name": "Speaking & Workshops",
+      "role": "Speaker",
+      "description": "Sharing insights on AI-native systems, agentic workflows, and the future of enterprise software at conferences and company tech talks.",
+      "talks": 12,
+      "events": ["React Conf", "Node Summit", "Enterprise AI Conference"],
+      "focus": ["AI", "Architecture", "Developer Experience"]
+    }
+  ]
+}

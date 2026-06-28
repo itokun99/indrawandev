@@ -32,7 +32,7 @@ export function HeroSection() {
           {/* Main heading */}
           <div className="space-y-4">
             <h1 className="text-mobile-h1 leading-tight">
-              Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
+              I architect <span className="gradient-text">AI-native</span> enterprise systems
             </h1>
             <p className="text-mobile-h3 text-muted-foreground font-normal">{personalInfo.title}</p>
           </div>

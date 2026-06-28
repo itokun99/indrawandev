@@ -1,0 +1,46 @@
+{
+  "title": "Latest Experiments",
+  "description": "Live explorations on LinkedIn where I share what I'm building and learning",
+  "experiments": [
+    {
+      "id": 1,
+      "title": "Building Agentic Workflows for Enterprise",
+      "description": "Exploring how multi-agent systems can orchestrate work across your entire tech stack",
+      "date": "2024-01-15",
+      "linkedinUrl": "https://linkedin.com/feed/update/",
+      "tags": ["AI", "Architecture", "Agents"],
+      "likes": 2400,
+      "comments": 180
+    },
+    {
+      "id": 2,
+      "title": "Terminal-First Development: The Future of DevTools",
+      "description": "Why the best developer experience happens in the terminal, not the browser",
+      "date": "2024-01-10",
+      "linkedinUrl": "https://linkedin.com/feed/update/",
+      "tags": ["DevTools", "Developer Experience", "Terminal"],
+      "likes": 1800,
+      "comments": 145
+    },
+    {
+      "id": 3,
+      "title": "OpenCode: Open Intelligence Standards for Enterprise",
+      "description": "Introducing the framework for building composable AI systems that respect your infrastructure",
+      "date": "2024-01-05",
+      "linkedinUrl": "https://linkedin.com/feed/update/",
+      "tags": ["Open Source", "Standards", "AI"],
+      "likes": 3200,
+      "comments": 256
+    },
+    {
+      "id": 4,
+      "title": "OMO: One Man Operation in the AI Era",
+      "description": "How AI enables solo architects to build and maintain enterprise-grade systems",
+      "date": "2023-12-28",
+      "linkedinUrl": "https://linkedin.com/feed/update/",
+      "tags": ["OMO", "Productivity", "AI"],
+      "likes": 2100,
+      "comments": 167
+    }
+  ]
+}

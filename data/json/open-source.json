@@ -1,0 +1,54 @@
+{
+  "title": "Open Source & AI Lab",
+  "description": "Projects, research, and frameworks shaping the future of AI-native development",
+  "projects": [
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "tagline": "Open Intelligence Standards for Enterprise",
+      "description": "A framework and standard for building AI systems that work across your entire technology stack. Enabling interoperability between different AI models, agents, and enterprise systems.",
+      "status": "Active",
+      "url": "https://github.com/itokun99/opencode",
+      "github": "itokun99/opencode",
+      "stars": 420,
+      "language": "TypeScript",
+      "topics": ["AI", "Standards", "Enterprise", "Open Source"]
+    },
+    {
+      "id": "agentic-framework",
+      "name": "Agentic Framework",
+      "tagline": "Multi-agent orchestration for enterprise systems",
+      "description": "Production-ready framework for building, deploying, and managing agentic workflows across multiple AI models and enterprise integrations.",
+      "status": "Active",
+      "url": "https://github.com/itokun99/agentic-framework",
+      "github": "itokun99/agentic-framework",
+      "stars": 280,
+      "language": "TypeScript",
+      "topics": ["Agents", "Architecture", "AI", "Orchestration"]
+    },
+    {
+      "id": "terminal-first",
+      "name": "Terminal-First CLI Stack",
+      "tagline": "Premium developer experience in the terminal",
+      "description": "A collection of carefully crafted CLI tools and patterns for building the next generation of developer-first products. Inspired by Linear.app, Raycast, and Warp.",
+      "status": "Active",
+      "url": "https://github.com/itokun99/terminal-first",
+      "github": "itokun99/terminal-first",
+      "stars": 150,
+      "language": "TypeScript",
+      "topics": ["DevTools", "CLI", "UX", "Developer Experience"]
+    },
+    {
+      "id": "mcp-ecosystem",
+      "name": "MCP Ecosystem",
+      "tagline": "Model Context Protocol integrations for enterprise",
+      "description": "Production-grade MCP servers and clients for connecting Claude and other LLMs to your enterprise systems, databases, and APIs.",
+      "status": "Active",
+      "url": "https://github.com/itokun99/mcp-ecosystem",
+      "github": "itokun99/mcp-ecosystem",
+      "stars": 340,
+      "language": "TypeScript",
+      "topics": ["MCP", "Claude", "Enterprise", "Integration"]
+    }
+  ]
+}

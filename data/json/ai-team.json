@@ -1,0 +1,38 @@
+{
+  "title": "AI Pantheon",
+  "description": "Meet the digital intelligences shaping my work",
+  "members": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "role": "Anthropic's Multimodal Reasoner",
+      "specialty": "Deep systems thinking, architecture patterns",
+      "icon": "🧠",
+      "color": "from-purple-500 to-pink-500"
+    },
+    {
+      "id": "gpt4",
+      "name": "GPT-4",
+      "role": "OpenAI's Reasoning Model",
+      "specialty": "Complex problem solving, code generation",
+      "icon": "⚡",
+      "color": "from-cyan-500 to-blue-500"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "role": "Google's Multimodal AI",
+      "specialty": "Vision, long-context reasoning",
+      "icon": "🔮",
+      "color": "from-orange-500 to-red-500"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "role": "Real-time Research Engine",
+      "specialty": "Current information, research synthesis",
+      "icon": "🌐",
+      "color": "from-green-500 to-teal-500"
+    }
+  ]
+}

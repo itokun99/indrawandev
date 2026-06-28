@@ -16,6 +16,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Menu, X } from "lucide-react"
 import { HeroScene } from "@/components/3d/hero-scene"
+import { ExperimentsSection } from "@/components/sections/experiments-section"
+import { OpenSourceSection } from "@/components/sections/open-source-section"
+import { AITeamSection } from "@/components/sections/ai-team-section"
+import { CommunitySection } from "@/components/sections/community-section"
+import { WorkflowSection } from "@/components/sections/workflow-section"
 
 export default function Home() {
   const [lang, setLang] = useState<"en" | "id">("en")
@@ -34,10 +39,13 @@ export default function Home() {
   const translate = (key: string) => t(lang, key)
 
   const navItems = [
-    { label: translate("nav.skills"), href: "#skills" },
+    { label: "About", href: "/about" },
+    { label: "Experiments", href: "#experiments" },
+    { label: "Open Source", href: "#open-source" },
+    { label: "AI Team", href: "#ai-team" },
     { label: translate("nav.experience"), href: "#experience" },
     { label: translate("nav.projects"), href: "#projects" },
-    { label: translate("nav.videos"), href: "#videos" },
+    { label: "Community", href: "#community" },
     { label: translate("nav.connect"), href: "#connect" },
   ]
 
@@ -125,11 +133,11 @@ export default function Home() {
             {/* Hero Content */}
             <div className="space-y-4">
               <div className="space-y-2">
-                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{personal.name}</h2>
-                <p className="text-lg text-muted-foreground">{translate("hero.role")}</p>
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{personal.title}</h2>
+                <p className="text-lg text-muted-foreground">{personal.subtitle}</p>
               </div>
               <p className="text-base leading-relaxed text-foreground/90">
-                {translate("hero.subtitle")}
+                {personal.shortBio}
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <Button variant="outline" size="sm" asChild>
@@ -149,6 +157,18 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Experiments Section */}
+        <ExperimentsSection />
+
+        {/* Open Source Section */}
+        <OpenSourceSection />
+
+        {/* AI Team Section */}
+        <AITeamSection />
+
+        {/* Workflow Section */}
+        <WorkflowSection />
 
         {/* Skills Section */}
         <section id="skills" className="space-y-4">
@@ -267,6 +287,9 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Community Section */}
+        <CommunitySection />
 
         {/* Connect Section */}
         <section id="connect" className="space-y-4">
