@@ -21,67 +21,63 @@ export function HeroSection() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-background to-muted/20 pt-16">
-      <div className="container text-center">
-        <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
-          {/* Status badge */}
-          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 text-mobile-small">
-            {personalInfo.status}
-          </Badge>
+    <section className="min-h-screen flex items-center justify-center relative pt-32 pb-16 overflow-hidden">
+      {/* Subtle background accent */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/3 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-secondary/3 rounded-full blur-3xl" />
+      </div>
 
-          {/* Main heading */}
-          <div className="space-y-4">
-            <h1 className="text-mobile-h1 leading-tight">
-              I architect <span className="gradient-text">AI-native</span> enterprise systems
-            </h1>
-            <p className="text-mobile-h3 text-muted-foreground font-normal">{personalInfo.title}</p>
+      <div className="container text-center">
+        <div className="max-w-4xl mx-auto space-y-8 sm:space-y-10">
+          {/* Status badge - terminal style */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-muted/30 backdrop-blur-sm">
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+            <span className="text-sm text-muted-foreground font-mono">{personalInfo.status}</span>
           </div>
 
-          {/* Description */}
-          <p className="text-mobile-body text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          {/* Main heading - premium typography */}
+          <div className="space-y-4">
+            <h1 className="leading-tight text-balance">
+              I architect <span className="gradient-text font-bold">AI-native</span> enterprise systems
+            </h1>
+            <p className="text-2xl md:text-3xl text-muted-foreground font-light tracking-wide">{personalInfo.title}</p>
+          </div>
+
+          {/* Description - elegant and spacious */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
             {personalInfo.shortBio}
           </p>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-lg mx-auto">
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
-                {personalInfo.stats.yearsExperience}
+          {/* Stats - minimal grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-2xl mx-auto py-6">
+            {[
+              { value: personalInfo.stats.yearsExperience, label: "Years Experience" },
+              { value: personalInfo.stats.projectsCompleted, label: "Projects" },
+              { value: personalInfo.stats.companiesWorked, label: "Companies" },
+              { value: personalInfo.stats.usersServed, label: "Users Served" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center space-y-2 border-l border-border/30 pl-4 last:border-l-0">
+                <div className="text-3xl md:text-4xl font-bold text-accent">{stat.value}</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>
-              <div className="text-mobile-small text-muted-foreground">Years</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
-                {personalInfo.stats.projectsCompleted}
-              </div>
-              <div className="text-mobile-small text-muted-foreground">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">
-                {personalInfo.stats.companiesWorked}
-              </div>
-              <div className="text-mobile-small text-muted-foreground">Companies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-primary mb-1">{personalInfo.stats.usersServed}</div>
-              <div className="text-mobile-small text-muted-foreground">Users</div>
-            </div>
+            ))}
           </div>
 
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          {/* CTA buttons - premium styling */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-mobile-body"
-              onClick={() => scrollToSection("#contact")}
+              className="bg-accent hover:bg-accent-secondary text-background font-semibold px-8 h-12 rounded-lg transition-all duration-200"
+              onClick={() => scrollToSection("#experiments")}
             >
               <Mail className="mr-2 h-4 w-4" />
-              Get In Touch
+              Explore My Work
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-mobile-body bg-transparent"
+              className="border border-border bg-card hover:bg-muted/50 text-foreground font-semibold px-8 h-12 rounded-lg transition-all duration-200"
               onClick={handleDownloadCV}
             >
               <Download className="mr-2 h-4 w-4" />
@@ -90,12 +86,13 @@ export function HeroSection() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="pt-8">
+          <div className="pt-12">
             <button
-              onClick={() => scrollToSection("#skills")}
-              className="animate-bounce text-primary hover:text-primary/80 transition-colors"
+              onClick={() => scrollToSection("#experiments")}
+              className="text-muted-foreground hover:text-accent transition-colors duration-200 inline-flex flex-col items-center gap-2"
             >
-              <ArrowDown className="h-5 w-5" />
+              <span className="text-xs uppercase tracking-widest font-mono">Scroll to explore</span>
+              <ArrowDown className="h-5 w-5 animate-bounce" />
             </button>
           </div>
         </div>

@@ -36,10 +36,10 @@ export default function AboutPage() {
           {/* Chapter 1 */}
           <section className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-2 h-2 rounded-full bg-accent" />
               <h2 className="text-2xl font-bold">The Foundation Years</h2>
             </div>
-            <Card className="p-6 space-y-4">
+            <Card className="card-premium p-6 space-y-4">
               <p className="text-foreground/80 leading-relaxed">
                 I started like most developers—obsessed with building applications. React Native, Node.js, the full stack. Eight years 
                 across ten companies, fifty projects shipped. I learned how to architect scalable systems, manage technical teams, and 
@@ -61,10 +61,10 @@ export default function AboutPage() {
           {/* Chapter 2 */}
           <section className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-2 h-2 rounded-full bg-accent" />
               <h2 className="text-2xl font-bold">The AI Inflection</h2>
             </div>
-            <Card className="p-6 space-y-4">
+            <Card className="card-premium p-6 space-y-4">
               <p className="text-foreground/80 leading-relaxed">
                 Then came 2023. Not because of ChatGPT—I'd been following LLMs—but because the economics fundamentally shifted. 
                 AI wasn&apos;t just a research achievement anymore. It was economically viable to embed intelligence everywhere.
@@ -82,10 +82,10 @@ export default function AboutPage() {
           {/* Chapter 3 */}
           <section className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-2 h-2 rounded-full bg-primary" />
+              <div className="w-2 h-2 rounded-full bg-accent" />
               <h2 className="text-2xl font-bold">Rethinking Enterprise Architecture</h2>
             </div>
-            <Card className="p-6 space-y-4">
+            <Card className="card-premium p-6 space-y-4">
               <p className="text-foreground/80 leading-relaxed">
                 Enterprise systems are defined by their constraints: distributed teams, legacy integration points, compliance requirements, 
                 massive data volumes. Traditional architecture patterns don&apos;t optimize for intelligence.

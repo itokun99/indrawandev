@@ -32,7 +32,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-sm border-b border-border shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container">
@@ -48,7 +48,7 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-3">
             <ThemeToggle />
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-mobile-small" onClick={scrollToContact}>
+            <Button size="sm" className="bg-accent hover:bg-accent-secondary text-background font-semibold rounded-md transition-all duration-200" onClick={scrollToContact}>
               Contact
             </Button>
           </div>
@@ -65,7 +65,7 @@ export function Header() {
               <SheetContent side="right" className="w-[280px]">
                 <div className="flex flex-col space-y-6 mt-6">
                   <Navigation mobile onItemClick={() => setIsMobileMenuOpen(false)} />
-                  <Button className="bg-primary hover:bg-primary/90 w-full text-mobile-small" onClick={scrollToContact}>
+                  <Button className="bg-accent hover:bg-accent-secondary text-background font-semibold rounded-md w-full transition-all duration-200" onClick={scrollToContact}>
                     Contact Me
                   </Button>
                 </div>

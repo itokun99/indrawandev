@@ -18,44 +18,46 @@ export function OpenSourceSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project: any) => (
-          <Card key={project.id} className="p-6 hover:border-foreground transition-colors flex flex-col">
+          <Card key={project.id} className="card-premium p-6 flex flex-col group hover:shadow-lg transition-all duration-200">
             <div className="mb-4">
-              <div className="flex items-start justify-between gap-4 mb-2">
-                <h3 className="text-xl font-semibold text-foreground flex-1">{project.name}</h3>
-                <div className="flex items-center gap-1 text-yellow-500 whitespace-nowrap">
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <h3 className="text-lg font-semibold text-foreground flex-1 group-hover:text-accent transition-colors">{project.name}</h3>
+                <div className="flex items-center gap-1.5 text-accent whitespace-nowrap font-mono text-sm">
                   <Star className="w-4 h-4 fill-current" />
-                  <span className="text-sm font-medium">{project.stars}</span>
+                  <span>{project.stars}</span>
                 </div>
               </div>
-              <p className="text-sm text-primary font-medium mb-2">{project.tagline}</p>
+              <p className="text-sm text-accent font-semibold mb-2">{project.tagline}</p>
               <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
             </div>
 
             <div className="my-4 flex-1">
               <div className="flex flex-wrap gap-2">
                 {project.topics.map((topic: string) => (
-                  <Badge key={topic} variant="secondary" className="text-xs">
+                  <Badge key={topic} variant="secondary" className="text-xs font-medium">
                     {topic}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t border-border">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span>{project.language}</span>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-border/50">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
+                <span className="text-accent">◊</span> {project.language}
               </div>
-              <Badge variant="outline" className="w-fit text-xs">
+              <Badge variant="outline" className="w-fit text-xs font-medium">
                 {project.status}
               </Badge>
-              <div className="flex gap-2 ml-auto">
-                <Button size="sm" variant="ghost" asChild>
-                  <a href={`https://github.com/${project.github}`} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </a>
-                </Button>
-              </div>
+              <Button 
+                size="sm" 
+                className="ml-auto bg-accent hover:bg-accent-secondary text-background font-semibold rounded-md text-xs transition-all duration-200"
+                asChild
+              >
+                <a href={`https://github.com/${project.github}`} target="_blank" rel="noopener noreferrer">
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </a>
+              </Button>
             </div>
           </Card>
         ))}

@@ -18,47 +18,49 @@ export function CommunitySection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {initiatives.map((initiative: any) => (
-          <Card key={initiative.id} className="p-6 hover:border-foreground transition-colors flex flex-col">
+          <Card key={initiative.id} className="card-premium p-6 flex flex-col group hover:shadow-lg transition-all duration-200">
             <div className="mb-4">
-              <h3 className="text-xl font-semibold text-foreground mb-1">{initiative.name}</h3>
-              <Badge variant="secondary" className="text-xs mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">{initiative.name}</h3>
+              <Badge variant="secondary" className="text-xs font-medium mb-3">
                 {initiative.role}
               </Badge>
               <p className="text-sm text-muted-foreground leading-relaxed">{initiative.description}</p>
             </div>
 
-            <div className="mt-auto pt-4 border-t border-border space-y-3">
+            <div className="mt-auto pt-4 border-t border-border/50 space-y-2 text-xs">
               {initiative.frequency && (
-                <div className="flex justify-between text-xs">
-                  <span className="text-muted-foreground">Frequency:</span>
-                  <span className="font-medium">{initiative.frequency}</span>
+                <div className="flex justify-between font-mono text-muted-foreground">
+                  <span>Frequency</span>
+                  <span className="text-foreground">{initiative.frequency}</span>
                 </div>
               )}
               
               {initiative.memberCount && (
-                <div className="flex justify-between text-xs">
-                  <span className="text-muted-foreground">Members:</span>
-                  <span className="font-medium">{initiative.memberCount.toLocaleString()}+</span>
+                <div className="flex justify-between font-mono text-muted-foreground">
+                  <span>Members</span>
+                  <span className="text-accent">{initiative.memberCount.toLocaleString()}+</span>
                 </div>
               )}
 
               {initiative.talks && (
-                <div className="flex justify-between text-xs">
-                  <span className="text-muted-foreground">Talks:</span>
-                  <span className="font-medium">{initiative.talks}</span>
+                <div className="flex justify-between font-mono text-muted-foreground">
+                  <span>Talks</span>
+                  <span className="text-foreground">{initiative.talks}</span>
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-1 mb-2">
-                {(initiative.focus || []).map((tag: string) => (
-                  <Badge key={tag} variant="outline" className="text-xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+              {(initiative.focus || []).length > 0 && (
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {(initiative.focus || []).map((tag: string) => (
+                    <Badge key={tag} variant="outline" className="text-xs font-medium">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
 
               {initiative.url && (
-                <Button size="sm" variant="outline" className="w-full" asChild>
+                <Button size="sm" className="w-full mt-3 bg-accent hover:bg-accent-secondary text-background font-semibold rounded-md transition-all duration-200" asChild>
                   <a href={initiative.url} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Learn More

@@ -18,20 +18,24 @@ export function AITeamSection() {
         {team.map((member: any) => (
           <Card
             key={member.id}
-            className={`p-6 border border-border hover:border-foreground transition-all cursor-pointer bg-gradient-to-br ${member.color} opacity-10 hover:opacity-20`}
+            className="card-premium p-6 cursor-pointer group hover:shadow-lg transition-all duration-200"
           >
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <span className="text-3xl">{member.icon}</span>
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">{member.name}</h3>
-                  <p className="text-sm text-muted-foreground">{member.role}</p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="text-4xl p-2 rounded-lg bg-muted/50 group-hover:bg-accent/10 transition-colors">
+                  {member.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg text-foreground group-hover:text-accent transition-colors">{member.name}</h3>
+                  <p className="text-sm text-accent font-medium">{member.role}</p>
                 </div>
               </div>
               <p className="text-sm text-foreground/80 leading-relaxed">{member.specialty}</p>
-              <Badge variant="outline" className="text-xs mt-2">
-                {member.specialty.split(",")[0]}
-              </Badge>
+              <div className="flex gap-2 pt-2 border-t border-border/50">
+                <Badge variant="secondary" className="text-xs font-medium">
+                  {member.specialty.split(",")[0]}
+                </Badge>
+              </div>
             </div>
           </Card>
         ))}
