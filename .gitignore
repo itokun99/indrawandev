@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OMO agent session state (stale runtime files)
+.omo/senpi-task/
+.omo/run-continuation/
