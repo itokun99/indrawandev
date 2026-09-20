@@ -12,7 +12,7 @@ export const translations = {
     },
     hero: {
       title: "Indrawan Lisanto",
-      role: "Senior Software Engineer",
+      role: "AI-Native Full-Stack Engineer · Mobile-first",
       subtitle: "Building robust, scalable systems with modern technologies. Specializing in React Native, Go, Microservices, and API Architecture.",
       email: "Email",
       resume: "Resume",
@@ -53,7 +53,7 @@ export const translations = {
     },
     hero: {
       title: "Indrawan Lisanto",
-      role: "Senior Software Engineer",
+      role: "AI-Native Full-Stack Engineer · Mobile-first",
       subtitle: "Membangun sistem yang robust dan scalable dengan teknologi modern. Spesialisasi dalam React Native, Go, Microservices, dan API Architecture.",
       email: "Email",
       resume: "Lihat CV",

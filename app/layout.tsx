@@ -24,7 +24,7 @@ const kodeMono = KodeMono({
 export const metadata: Metadata = {
   metadataBase: new URL(webConfig.site.url),
   title: {
-    default: "Indrawan Lisanto | Senior Software Engineer",
+    default: "Indrawan Lisanto | AI-Native Full-Stack Engineer · Mobile-first",
     template: "%s | Indrawan Lisanto",
   },
   description: "Senior Software Engineer specialized in React Native, Full-Stack Development, and scalable backend systems.",
