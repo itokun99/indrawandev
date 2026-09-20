@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: "Indrawan Lisanto | AI-Native Full-Stack Engineer · Mobile-first",
     template: "%s | Indrawan Lisanto",
   },
-  description: "Senior Software Engineer specialized in React Native, Full-Stack Development, and scalable backend systems.",
+  description: "AI-Native Full-Stack Engineer, mobile-first - React Native, Full-Stack, and scalable backend systems.",
   keywords: ["Software Engineer", "React Native", "Full-Stack Developer", "TypeScript", "Go", "Node.js"],
   authors: [{ name: "Indrawan Lisanto", url: webConfig.site.url }],
   creator: "Indrawan Lisanto",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Indrawan Lisanto",
-    description: "Senior Software Engineer specializing in React Native and Full-Stack Development",
+    description: "AI-Native Full-Stack Engineer specializing in React Native and Full-Stack Development",
     url: webConfig.site.url,
     siteName: "indrawan.dev",
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Indrawan Lisanto",
-    description: "Senior Software Engineer - React Native, Full-Stack, Backend Systems",
+    description: "AI-Native Full-Stack Engineer - React Native, Full-Stack, Backend Systems",
     creator: "@indrawandev",
   },
   robots: {
