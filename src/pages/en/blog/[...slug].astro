@@ -1,0 +1,49 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getWebConfig } from '../../../lib/data';
+import { postsFor, slugOf } from '../../../lib/posts';
+import { formatDate, toIsoUtc } from '../../../lib/dates';
+import { t } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const lang = 'en' as const;
+  const posts = await postsFor(lang);
+  return posts.map((entry) => ({
+    params: { slug: slugOf(entry) },
+    props: { entry, lang, prev: null, next: null },
+  }));
+}
+
+const { entry, lang, prev, next } = Astro.props;
+const webConfig = getWebConfig();
+---
+
+<BaseLayout
+  title={`${entry.data.title} - ${webConfig.site.title}`}
+  description={entry.data.description}
+  lang={lang}
+  ogType="article"
+>
+  <Header lang={lang} alternateUrl="/blog/" />
+  <main class="py-16 md:py-24">
+    <div class="container max-w-3xl">
+      <a href="/en/blog/" class="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1 mb-6">
+        ← {t(lang, 'blog.backToList')}
+      </a>
+      <article class="prose prose-slate dark:prose-invert max-w-none">
+        <h1>{entry.data.title}</h1>
+        <div class="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+          <time datetime={toIsoUtc(entry.data.pubDate)}>
+            {t(lang, 'blog.published')} {formatDate(entry.data.pubDate, lang)}
+          </time>
+        </div>
+        {render(entry).body}
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

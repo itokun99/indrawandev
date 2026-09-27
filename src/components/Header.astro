@@ -1,0 +1,76 @@
+---
+interface Props {
+  lang: Lang;
+  alternateUrl?: string;
+}
+
+const { lang, alternateUrl } = Astro.props;
+
+import type { Lang } from '../lib/i18n';
+import { t } from '../lib/i18n';
+import { getPersonalInfo, getNavigation } from '../lib/data';
+
+const personalInfo = getPersonalInfo();
+const nav = getNavigation();
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container flex h-14 max-w-screen-2xl items-center">
+    <div class="mr-4 hidden md:flex">
+      <a class="mr-6 flex items-center space-x-2" href="/">
+        <span class="hidden font-bold sm:inline-block">{personalInfo.name}</span>
+      </a>
+      <nav class="flex items-center space-x-6 text-sm font-medium">
+        <a href="#skills" class="transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.skills')}</a>
+        <a href="#experience" class="transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.experience')}</a>
+        <a href="#projects" class="transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.projects')}</a>
+        <a href="#videos" class="transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.videos')}</a>
+        <a href="#connect" class="transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.connect')}</a>
+      </nav>
+    </div>
+    <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+      <nav class="flex items-center space-x-2">
+        {alternateUrl && (
+          <a href={lang === 'id' ? alternateUrl : '/'} class="text-sm font-medium text-foreground/60 hover:text-foreground">
+            {lang === 'id' ? 'EN' : 'ID'}
+          </a>
+        )}
+        <button id="theme-toggle" class="inline-flex items-center justify-center rounded-md p-2 text-sm font-medium text-foreground/60 hover:bg-accent hover:text-foreground" type="button">
+          <svg class="h-5 w-5 scale-100 transform dark:scale-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 7a5 5 0 100 10 5 5 0 000-10z" />
+          </svg>
+          <svg class="h-5 w-5 scale-0 transform dark:scale-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        <details class="group mobile-menu md:hidden">
+          <summary class="flex cursor-pointer items-center justify-center rounded-md p-2 text-foreground outline-none ring-offset-background transition-[color,box-shadow] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </summary>
+          <nav class="absolute left-0 right-0 top-full mt-2 flex flex-col gap-2 rounded-lg border bg-background p-4 shadow-lg group-open:animate-in group-open:fade-in-0 group-open:slide-in-from-top-2">
+            <a href="#skills" class="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.skills')}</a>
+            <a href="#experience" class="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.experience')}</a>
+            <a href="#projects" class="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.projects')}</a>
+            <a href="#videos" class="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.videos')}</a>
+            <a href="#connect" class="text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60">{t(lang, 'nav.connect')}</a>
+            {alternateUrl && (
+              <a href={lang === 'id' ? alternateUrl : '/'} class="text-sm font-medium text-foreground/60 hover:text-foreground">
+                {lang === 'id' ? 'EN' : 'ID'}
+              </a>
+            )}
+          </nav>
+        </details>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const toggle = document.getElementById('theme-toggle');
+  toggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+</script>

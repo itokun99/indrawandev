@@ -1,3 +1,5 @@
+export type Lang = "id" | "en"
+
 export const translations = {
   en: {
     header: {
@@ -38,6 +40,18 @@ export const translations = {
     },
     footer: {
       copyright: "All rights reserved.",
+    },
+    blog: {
+      title: "Blog",
+      backToList: "Back to all posts",
+      published: "Published",
+      updated: "Updated",
+      tags: "Tags",
+      readMore: "Read more",
+      prev: "Previous",
+      next: "Next",
+      empty: "No posts yet.",
+      sampleNote: "This is sample content, shown until real posts exist.",
     },
   },
   id: {
@@ -80,18 +94,22 @@ export const translations = {
     footer: {
       copyright: "Semua hak dilindungi.",
     },
+    blog: {
+      title: "Blog",
+      backToList: "Kembali ke semua tulisan",
+      published: "Diterbitkan",
+      updated: "Diperbarui",
+      tags: "Tag",
+      readMore: "Baca selengkapnya",
+      prev: "Sebelumnya",
+      next: "Berikutnya",
+      empty: "Belum ada tulisan.",
+      sampleNote: "Ini konten contoh, ditampilkan sampai tulisan asli tersedia.",
+    },
   },
 }
 
-export function getLanguage(): "en" | "id" {
-  if (typeof window !== "undefined") {
-    const browserLang = navigator.language || (navigator.languages ? navigator.languages[0] : "en")
-    return browserLang.startsWith("id") ? "id" : "en"
-  }
-  return "en"
-}
-
-export function t(lang: "en" | "id", key: string): string {
+export function t(lang: Lang, key: string): string {
   const keys = key.split(".")
   let value: any = translations[lang]
   for (const k of keys) {

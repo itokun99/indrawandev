@@ -1,0 +1,27 @@
+{
+  "name": "Indrawan Lisanto - Software Engineer & React Native Developer",
+  "short_name": "Portfolio",
+  "description": "Software Engineer with over 6 years of experience, specializing in React Native to build high-performance mobile applications for enterprise clients.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/placeholder-logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/placeholder-logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/placeholder-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

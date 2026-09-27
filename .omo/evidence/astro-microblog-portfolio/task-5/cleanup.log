@@ -1,0 +1,87 @@
+=== rg filter (tracked+untracked, non-ignored) ===
+components.json
+components/organisms/experience-section.tsx
+components/organisms/header.tsx
+components/organisms/hero-section.tsx
+components/organisms/testimonials-section.tsx
+components/organisms/footer.tsx
+components/organisms/skills-section.tsx
+components/organisms/youtube-section.tsx
+components/organisms/featured-section.tsx
+components/organisms/projects-section.tsx
+components/organisms/contact-section.tsx
+components/AGENTS.md
+components/providers/theme-provider.tsx
+components/atoms/theme-toggle.tsx
+components/atoms/back-to-top.tsx
+components/atoms/logo.tsx
+components/molecules/social-links.tsx
+components/molecules/navigation.tsx
+components/3d/hero-scene.tsx
+components/ui/button.tsx
+components/ui/badge.tsx
+components/ui/card.tsx
+components/theme-provider.tsx
+styles/globals.css
+next.config.mjs
+MULTI
+app/globals.css
+app/page.tsx
+app/manifest.ts
+app/layout.tsx
+app/sitemap.ts
+app/robots.ts
+rg_exit=0
+
+=== rg filter incl. ignored (-uu, excl node_modules/.git/.next) ===
+components.json
+components/organisms/experience-section.tsx
+components/organisms/header.tsx
+components/organisms/hero-section.tsx
+components/organisms/testimonials-section.tsx
+components/organisms/footer.tsx
+components/organisms/skills-section.tsx
+components/organisms/youtube-section.tsx
+components/organisms/featured-section.tsx
+components/organisms/projects-section.tsx
+components/organisms/contact-section.tsx
+components/AGENTS.md
+components/providers/theme-provider.tsx
+components/atoms/theme-toggle.tsx
+components/atoms/back-to-top.tsx
+components/atoms/logo.tsx
+components/molecules/social-links.tsx
+components/molecules/navigation.tsx
+components/3d/hero-scene.tsx
+components/ui/button.tsx
+components/ui/badge.tsx
+components/ui/card.tsx
+components/theme-provider.tsx
+styles/globals.css
+next.config.mjs
+MULTI
+app/globals.css
+app/page.tsx
+app/manifest.ts
+app/layout.tsx
+app/sitemap.ts
+app/robots.ts
+rg_all_exit=0
+
+=== git status --porcelain (paths deleted) ===
+ M .gitignore
+ M pnpm-lock.yaml
+R  data/json/personal-info.json -> src/data/personal-info.json
+R  data/json/social-link.json -> src/data/social-link.json
+R  data/json/web-config.json -> src/data/web-config.json
+R  data/json/work-experience.json -> src/data/work-experience.json
+RM lib/data.ts -> src/lib/data.ts
+RM lib/i18n.ts -> src/lib/i18n.ts
+R  lib/utils.ts -> src/lib/utils.ts
+ M tailwind.config.ts
+ M tsconfig.json
+?? .omo/evidence/
+?? astro.config.mjs
+?? src/env.d.ts
+?? src/pages/
+?? src/styles/

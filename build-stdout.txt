@@ -1,0 +1,10 @@
+02:53:48 [content] Syncing content
+02:53:48 [content] Synced content
+02:53:48 [types] Generated 240ms
+02:53:48 [build] output: "static"
+02:53:48 [build] mode: "static"
+02:53:48 [build] directory: /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio/dist/
+02:53:48 [build] Collecting build info...
+02:53:48 [build] ✓ Completed in 264ms.
+02:53:48 [build] Building static entrypoints...
+02:53:49 [assets] Copying fonts (3 files)...

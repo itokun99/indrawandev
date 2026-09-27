@@ -1,0 +1,15 @@
+(node:54330) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Astro                    v7.3.5
+Node                     v24.18.0
+System                   macOS (arm64)
+Package Manager          pnpm
+Output                   static
+Adapter                  none
+Integrations             none
+[?25l◆  Copy to clipboard?
+● Yes / ○ No
+
+[1A
+[?25h[999D[3A[J◇  Copy to clipboard?
+No

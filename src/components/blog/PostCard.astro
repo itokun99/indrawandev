@@ -1,0 +1,44 @@
+---
+interface Props {
+  entry: import('astro:content').CollectionEntry<'blog'>;
+  lang: 'id' | 'en';
+}
+
+const { entry, lang } = Astro.props;
+import { slugOf } from '../../lib/posts';
+import { formatDate } from '../../lib/dates';
+import { t } from '../../lib/i18n';
+
+const slug = slugOf(entry);
+---
+
+<article class="rounded-lg border bg-card text-card-foreground shadow-sm">
+  <div class="p-6">
+    <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+      <time datetime={entry.data.pubDate.toISOString()}>
+        {formatDate(entry.data.pubDate, lang)}
+      </time>
+      {entry.data.updatedDate && (
+        <span>
+          ({t(lang, 'blog.updated')} {formatDate(entry.data.updatedDate, lang)})
+        </span>
+      )}
+    </div>
+    <h3 class="font-semibold text-lg">
+      <a href={`/blog/${slug}`}>{entry.data.title}</a>
+    </h3>
+    <p class="text-sm text-muted-foreground mt-2">{entry.data.description}</p>
+    {entry.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mt-4">
+        {entry.data.tags.map((tag) => (
+          <a
+            href={`/blog/tags/${tag}`}
+            class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</article>
