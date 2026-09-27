@@ -1,7 +1,7 @@
-import personalInfo from "@/data/json/personal-info.json"
-import workExperience from "@/data/json/work-experience.json"
-import socialLinks from "@/data/json/social-link.json"
-import webConfig from "@/data/json/web-config.json"
+import personalInfo from "../data/personal-info.json"
+import workExperience from "../data/work-experience.json"
+import socialLinks from "../data/social-link.json"
+import webConfig from "../data/web-config.json"
 
 export const getPersonalInfo = () => personalInfo
 export const getWorkExperience = () => workExperience.experiences
