@@ -1,0 +1,16 @@
+Build: 
+> my-v0-project@0.1.0 build /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio
+> astro build
+
+21:36:06 [types] Generated 76ms
+21:36:06 [build] output: "static"
+21:36:06 [build] mode: "static"
+21:36:06 [build] directory: /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio/dist/
+21:36:06 [build] Collecting build info...
+21:36:06 [build] ✓ Completed in 99ms.
+21:36:06 [build] Building static entrypoints...
+21:36:06 [assets] Copying fonts (3 files)...
+2
+
+robots.txt.ts exists: true
+site.webmanifest.ts exists: true
