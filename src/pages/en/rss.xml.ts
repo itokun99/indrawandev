@@ -1,9 +1,9 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { getWebConfig } from '../lib/data';
-import { t } from '../lib/i18n';
-import { postsFor } from '../lib/posts';
-import { slugOf } from '../lib/posts';
+import { getWebConfig } from '../../lib/data';
+import { t } from '../../lib/i18n';
+import { postsFor } from '../../lib/posts';
+import { slugOf } from '../../lib/posts';
 
 export async function GET(context: any) {
   const posts = await postsFor('en');

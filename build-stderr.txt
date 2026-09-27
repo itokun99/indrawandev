@@ -1,0 +1,18 @@
+02:53:49 [ERROR] [vite] ✗ Build failed in 252ms
+[UNRESOLVED_IMPORT] Could not resolve '../lib/data' in src/pages/en/rss.xml.ts
+   ╭─[ src/pages/en/rss.xml.ts:3:30 ]
+   │
+ 3 │ import { getWebConfig } from "../lib/data";
+   │                              ──────┬──────  
+   │                                    ╰──────── Module not found.
+   │ 
+   │ Help: 'src/pages/en/rss.xml.ts' is imported by the following path:
+   │         - src/pages/en/rss.xml.ts
+   │         - \0virtual:astro:page:src/pages/en/rss.xml@_@ts
+   │         - \0virtual:astro:pages
+   │         - \0virtual:astro:manifest
+   │         - node_modules/.pnpm/astro@7.3.5_@types+node@22.19.7_jiti@1.21.7_terser@5.46.0_yaml@2.8.2/node_modules/astro/dist/entrypoints/prerender.js
+───╯
+
+  Location:
+    /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio/src/pages/en/rss.xml.ts:3:29

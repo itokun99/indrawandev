@@ -4,7 +4,7 @@ import { t } from '../../lib/i18n';
 import { getProjects } from '../../lib/data';
 
 const { lang } = Astro.props;
-const projects = getProjects();
+const projects = getProjects().filter(p => p.featured);
 ---
 
 <section id="projects" class="py-16 md:py-24 bg-muted/50">

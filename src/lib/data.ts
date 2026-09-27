@@ -8,7 +8,7 @@ export const getWorkExperience = () => workExperience.experiences
 export const getSocialLinks = () => socialLinks.socialLinks
 export const getWebConfig = () => webConfig
 export const getSkills = () => webConfig.skills
-export const getProjects = () => webConfig.projects
+export const getProjects = () => [...(webConfig.projects.featured || []), ...(webConfig.projects.other || [])]
 export const getTestimonials = () => webConfig.testimonials
 export const getFeaturedInsights = () => webConfig.featuredInsights
 export const getYouTubeVideos = () => webConfig.youtubeVideos
