@@ -11,7 +11,7 @@ const blog = defineCollection({
     draft: z.boolean().default(false),
     lang: z.enum(['id', 'en']),
     translationKey: z.string().optional(),
-    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional().refine(
+    slug: z.string().regex(/^[a-z-9]+(?:-[a-z-9]+)*$/).optional().refine(
       (val) => !['index', 'tags', 'page', 'rss.xml', 'sitemap.xml', 'feed'].includes(val || ''),
       { message: 'Slug is a reserved word' }
     ),
