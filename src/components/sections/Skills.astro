@@ -1,0 +1,36 @@
+---
+import type { Lang } from '../../lib/i18n';
+import { t } from '../../lib/i18n';
+import { getSkills } from '../../lib/data';
+
+const { lang } = Astro.props;
+const skills = getSkills();
+---
+
+<section id="skills" class="py-16 md:py-24 bg-muted/50">
+  <div class="container">
+    <h2 class="text-3xl font-bold tracking-tight mb-8">
+      {t(lang, 'skills.title')}
+    </h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {skills.categories.map((category) => (
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div class="p-6">
+            <h3 class="font-semibold leading-none tracking-tight mb-4">
+              {category.title}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                >
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
