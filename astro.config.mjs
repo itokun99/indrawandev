@@ -1,6 +1,7 @@
 import { defineConfig, fontProviders } from 'astro/config';
 
 export default defineConfig({
+  srcDir: 'src',
   site: 'https://indrawan.dev',
   fonts: [
     {
