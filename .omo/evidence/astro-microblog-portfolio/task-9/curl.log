@@ -1,16 +1,76 @@
-Build: 
-> my-v0-project@0.1.0 build /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio
-> astro build
+== preview server log ==
 
-21:36:06 [types] Generated 76ms
-21:36:06 [build] output: "static"
-21:36:06 [build] mode: "static"
-21:36:06 [build] directory: /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio/dist/
-21:36:06 [build] Collecting build info...
-21:36:06 [build] ✓ Completed in 99ms.
-21:36:06 [build] Building static entrypoints...
-21:36:06 [assets] Copying fonts (3 files)...
-2
+> my-v0-project@0.1.0 preview /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio
+> astro preview --port 4399
 
-robots.txt.ts exists: true
-site.webmanifest.ts exists: true
+ astro  v7.3.5 ready in 27 ms
+┃ Local    http://localhost:4399/
+┃ Network  use --host to expose
+
+== curl robots.txt (headers) ==
+HTTP/1.1 200 OK
+Vary: Origin
+Content-Length: 65
+Content-Type: text/plain
+Last-Modified: Sun, 27 Sep 2026 14:36:07 GMT
+ETag: W/"65-1790519767060"
+Cache-Control: no-cache
+Date: Sun, 27 Sep 2026 14:36:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+== robots.txt body ==
+User-agent: *
+Allow: /
+Sitemap: https://indrawan.dev/sitemap.xml
+== curl site.webmanifest (headers) ==
+HTTP/1.1 200 OK
+Vary: Origin
+Content-Length: 726
+Content-Type: application/manifest+json
+Last-Modified: Sun, 27 Sep 2026 14:36:07 GMT
+ETag: W/"726-1790519767061"
+Cache-Control: no-cache
+Date: Sun, 27 Sep 2026 14:36:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+== site.webmanifest body ==
+{
+  "name": "Indrawan Lisanto - Software Engineer & React Native Developer",
+  "short_name": "Portfolio",
+  "description": "Software Engineer with over 6 years of experience, specializing in React Native to build high-performance mobile applications for enterprise clients.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/placeholder-logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/placeholder-logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/placeholder-logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
+
+== robots byte-exact check ==
+ROBOTS_BYTE_EXACT=YES
+== manifest icon resolution under dist/ ==
+parsed JSON OK, keys: name,short_name,description,start_url,scope,display,background_color,theme_color,icons
+  /placeholder-logo.png -> EXISTS dist/placeholder-logo.png
+  /placeholder-logo.png -> EXISTS dist/placeholder-logo.png
+  /placeholder-logo.svg -> EXISTS dist/placeholder-logo.svg
+== dist robots/webmanifest ==
+-rw-r--r--@ 1 aleph  staff   65 Sep 27 21:36 dist/robots.txt
+-rw-r--r--@ 1 aleph  staff  726 Sep 27 21:36 dist/site.webmanifest

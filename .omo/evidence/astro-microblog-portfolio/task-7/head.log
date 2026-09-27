@@ -1,0 +1,31 @@
+Build:
+
+> my-v0-project@0.1.0 build /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio
+> astro build
+
+21:37:52 [types] Generated 153ms
+21:37:52 [build] output: "static"
+21:37:52 [build] mode: "static"
+21:37:52 [build] directory: /Users/aleph/Projects/indrawandev/indrawandev-wt/astro-microblog-portfolio/dist/
+21:37:52 [build] Collecting build info...
+21:37:52 [build] ✓ Completed in 179ms.
+21:37:52 [build] Building static entrypoints...
+21:37:52 [assets] Copying fonts (3 files)...
+21:37:53 [vite] ✓ built in 343ms
+21:37:53 [vite] ✓ built in 22ms
+21:37:53 [build] Rearranging server assets...
+
+ generating static routes 
+21:37:53   ├─ /robots.txt (+4ms) 
+21:37:53   ├─ /site.webmanifest (+1ms) 
+21:37:53   ├─ /index.html (+3ms) 
+21:37:53 ✓ Completed in 41ms.
+
+21:37:53 [build] ✓ Completed in 424ms.
+21:37:53 [build] 1 page(s) built in 606ms
+21:37:53 [build] Complete!
+
+
+BaseLayout created: true
+Headers created: true
+Footer created: true
